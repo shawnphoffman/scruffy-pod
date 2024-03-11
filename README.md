@@ -1,3 +1,3 @@
-# Just Shillin'
+# Scruffy Lookin' Podcasters
 
-Official website for the Just Shillin' podcast.
+Official website for the Scruffy Lookin' Podcasters.

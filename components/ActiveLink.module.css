@@ -5,11 +5,11 @@
 	color: var(--white);
 }
 .link:hover {
-	color: var(--js3);
+	color: var(--slp3);
 }
 .link.active {
 	text-underline-offset: 6px;
 	text-decoration: underline;
-	text-decoration-color: var(--js3);
+	text-decoration-color: var(--slp3);
 	text-decoration-thickness: 1px;
 }

@@ -2,9 +2,14 @@
 
 import { XMLParser } from 'fast-xml-parser'
 
+import { appleRatingUrl, rssFeedUrl, spotifyUrl } from './(pages)/(links)/links'
+
 export async function getReviews() {
 	try {
-		const res = await fetch('https://api.shawn.party/api/just-shillin/reviews', { next: { revalidate: 60 * 60 * 1 } })
+		// const res = await fetch('https://api.shawn.party/api/just-shillin/reviews', {
+		const res = await fetch(`https://api.shawn.party/api/pod-data/apple?url=${appleRatingUrl}`, {
+			next: { revalidate: 60 * 60 * 1 },
+		})
 		const data = await res.json()
 		const { rating, ratingsUrl, reviews } = data
 
@@ -21,7 +26,7 @@ export async function getReviews() {
 
 export async function getSpotifyReviews() {
 	try {
-		const res = await fetch(`https://api.shawn.party/api/pod-data/spotify?url=${'https://open.spotify.com/show/0BM9MOB6jdirna5f1vNcMe'}`, {
+		const res = await fetch(`https://api.shawn.party/api/pod-data/spotify?url=${spotifyUrl}`, {
 			next: { revalidate: 60 * 60 * 1 },
 		})
 		const data = await res.json()
@@ -33,7 +38,7 @@ export async function getSpotifyReviews() {
 
 export async function getEpisodes() {
 	try {
-		const res = await fetch('https://feeds.zencastr.com/f/l5bmy6wm.rss', {
+		const res = await fetch(rssFeedUrl, {
 			next: { revalidate: 60 * 60 * 1 },
 		})
 		const xml = await res.text()
@@ -42,18 +47,24 @@ export async function getEpisodes() {
 			attributeNamePrefix: '@_',
 		})
 		const parsed = parser.parse(xml)
-		const episodes = parsed.rss.channel.item.map(ep => ({
-			guid: ep.guid['#text'],
-			title: ep.title,
-			imgSrc: ep['itunes:image']['@_href'],
-			summary: ep['itunes:summary'],
-			link: ep.link,
-			pubDate: ep.pubDate,
-		}))
+		const feedImg = parsed.rss.channel.image.url
+		const episodes = parsed.rss.channel.item.map(ep => {
+			console.log(ep)
+			const imgSrc = ep['itunes:image'] ? ep['itunes:image']['@_href'] : feedImg
+			return {
+				guid: ep.guid['#text'],
+				title: ep.title,
+				imgSrc,
+				summary: ep['itunes:summary'],
+				link: ep.link,
+				pubDate: ep.pubDate,
+			}
+		})
 		return {
 			episodes,
 		}
 	} catch (error) {
+		console.log(error)
 		return {}
 	}
 }

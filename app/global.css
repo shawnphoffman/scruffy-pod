@@ -6,11 +6,12 @@
 	--spotify: #16883e;
 	--yellow: rgb(237, 237, 55);
 
-	--js1: #00c875;
-	/* --js2: #004040; */
-	--js3: #ffee00;
-	/* --js4: hsl(180, 100%, 10%); */
-	--js4: hsl(180, 100%, 7%);
+	--slp1: #00c875;
+	/* --slp2: #004040; */
+	--slp3: #ffee00;
+	/* --slp4: hsl(180, 100%, 10%); */
+	--slp4: hsl(180, 100%, 7%);
+	--slp5: #242424;
 }
 
 /* DEFAULTS */
@@ -19,9 +20,9 @@
 }
 html {
 	background: var(--bg);
-	background: linear-gradient(180deg, var(--bg), var(--js4));
+	background: linear-gradient(180deg, var(--bg), var(--slp4));
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	/* animation: gradient 15s ease infinite; */
 }
 @keyframes gradient {
 	0% {
@@ -48,11 +49,11 @@ html body {
 
 a {
 	transition: color 150ms ease-in;
-	color: var(--js3);
+	color: var(--slp3);
 	text-decoration: none;
 }
 a:hover {
-	color: var(--js3);
+	color: var(--slp3);
 }
 
 /* USED */
@@ -126,6 +127,8 @@ a:hover {
 .headerLogo {
 	height: auto;
 	width: auto;
+	border-radius: 1rem;
+	border: 2px solid var(--slp5);
 }
 
 .iframe {

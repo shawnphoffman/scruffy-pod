@@ -4,17 +4,17 @@
 		<style>
 			:root {
 				--bg: #000;
-				--js1: #00c875;
-				--js3: #ffee00;
-				--js4: hsl(180, 100%, 7%);
+				--slp1: #00c875;
+				--slp3: #ffee00;
+				--slp4: hsl(180, 100%, 7%);
 			}
 
 			.green {
-				fill: var(--js1);
+				fill: var(--slp1);
 			}
 
 			.dark {
-				fill: var(--js4);
+				fill: var(--slp4);
 				animation: fadeOuter 15s ease infinite;
 			}
 
@@ -29,7 +29,7 @@
 				}
 
 				50% {
-					fill: var(--js1);
+					fill: var(--slp1);
 				}
 
 				100% {
@@ -39,15 +39,15 @@
 
 			@keyframes fadeOuter {
 				0% {
-					fill: var(--js4);
+					fill: var(--slp4);
 				}
 
 				50% {
-					fill: var(--js3);
+					fill: var(--slp3);
 				}
 
 				100% {
-					fill: var(--js4);
+					fill: var(--slp4);
 				}
 			}
 		</style>

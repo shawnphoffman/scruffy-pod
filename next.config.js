@@ -3,10 +3,19 @@ module.exports = {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: 'media.zencastr.com',
+				hostname: 'deow9bq0xqvbj.cloudfront.net',
 				port: '',
-				pathname: '/image-files/**',
+				pathname: '/**',
 			},
 		],
 	},
+	// async redirects() {
+	// 	return [
+	// 		{
+	// 			source: '/links',
+	// 			destination: '/',
+	// 			permanent: true,
+	// 		},
+	// 	]
+	// },
 }

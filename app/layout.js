@@ -4,19 +4,18 @@ import 'app/stars.css'
 import { GeistSans } from 'geist/font/sans'
 import Image from 'next/image'
 
-import titleSvg from 'app/title.svg'
+// import titleSvg from 'app/title.svg'
+import titleLogo from 'app/icon.webp'
 import ActiveLink from 'components/ActiveLink'
 import StarBackground from 'components/StarBackground'
 
 export const metadata = {
-	title: `Just Shillin Positive Podcasting`,
-	description:
-		'Join Andy and Shawn for a casual and light-hearted podcast experience. Discover what happens when two friends come together to share their love for the things that make life awesome',
+	title: `Scruffy Lookin' Podcasters`,
+	description: 'TODO',
 	metadataBase: 'https://justshillin.com',
 	openGraph: {
-		title: `Just Shillin - Positive Podcasting`,
-		description:
-			'Join Andy and Shawn for a casual and light-hearted podcast experience. Discover what happens when two friends come together to share their love for the things that make life awesome',
+		title: `Scruffy Lookin' Podcasters`,
+		description: 'TODO',
 		url: 'https://justshillin.com',
 		locale: 'en_US',
 		type: 'website',
@@ -36,8 +35,8 @@ export default function RootLayout({ children }) {
 					<div className="wrapper">
 						<div className="page">
 							<div className="header">
-								{/* <Image className="headerLogo" alt="Just Shillin'" src={titleLogo} width={292} height={139} priority /> */}
-								<Image src={titleSvg} alt="Just Shillin'" priority unoptimized className="headerLogo" />
+								<Image className="headerLogo" alt="Scruffy Lookin' Podcasters" src={titleLogo} width={320} height={320} priority />
+								{/* <Image src={titleSvg} alt="Scruffy Lookin' Podcasters" priority unoptimized className="headerLogo" /> */}
 								<div className="navContainer">
 									<ActiveLink href="/" label="Links" />
 									<ActiveLink href="/episodes" label="Episodes" />

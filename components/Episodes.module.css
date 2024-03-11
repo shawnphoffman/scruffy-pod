@@ -14,7 +14,7 @@
 	text-align: left;
 	font-size: 14px;
 	width: 100%;
-	border-top: 1px solid var(--js3);
+	border-top: 1px solid var(--slp3);
 }
 @media (max-width: 720px) {
 	.container {
@@ -34,7 +34,7 @@
 
 .pubDate {
 	font-size: 12px;
-	color: var(--js3);
+	color: var(--slp3);
 	margin-bottom: 8px;
 }
 
@@ -54,6 +54,8 @@
 	width: 200px;
 	height: 200px;
 	margin-bottom: 8px;
+	border-radius: 1rem;
+	border: 2px solid var(--slp5);
 }
 
 .summary {
@@ -69,20 +71,20 @@
 }
 
 .summary a {
-	color: var(--js3);
+	color: var(--slp3);
 }
 
 .summary a:hover {
-	color: var(--js1);
+	color: var(--slp1);
 }
 
 .link {
 	margin-top: 8px;
 	display: block;
-	color: var(--js3);
+	color: var(--slp3);
 }
 .link:hover {
-	color: var(--js1);
+	color: var(--slp1);
 }
 
 .input {
