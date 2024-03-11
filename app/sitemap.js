@@ -1,4 +1,4 @@
-const root = 'https://justshillin.com'
+const root = 'https://scruffypod.com'
 
 export default function sitemap() {
 	return [

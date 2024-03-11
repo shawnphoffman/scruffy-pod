@@ -5,7 +5,7 @@ export const applePodcastUrl = `https://podcasts.apple.com/us/podcast/id${appleP
 export const appleRatingUrl = `${applePodcastUrl}?see-all=reviews`
 export const rssFeedUrl = 'https://feed.podbean.com/scruffypodcasters/feed.xml'
 
-const podbeanUrl = 'https://scruffypodcasters.podbean.com'
+export const podbeanUrl = 'https://scruffypodcasters.podbean.com'
 
 const items = [
 	// {

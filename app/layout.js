@@ -11,12 +11,14 @@ import StarBackground from 'components/StarBackground'
 
 export const metadata = {
 	title: `Scruffy Lookin' Podcasters`,
-	description: 'TODO',
-	metadataBase: 'https://justshillin.com',
+	description:
+		'A stuck-up, half-witted, Star Wars Podcast. 4 scruffy dudes on a weekly podcast covering Star Wars news and speculation. Hosts and avid Star Wars fans James Hebert, Kev Garbett, Chris Hall, and Ed Bosshart discuss Star Wars movies, shows, news, books, and more from their perspectives and have loads of fun doing it. Mature Content.',
+	metadataBase: 'https://scruffypod.com',
 	openGraph: {
 		title: `Scruffy Lookin' Podcasters`,
-		description: 'TODO',
-		url: 'https://justshillin.com',
+		description:
+			'A stuck-up, half-witted, Star Wars Podcast. 4 scruffy dudes on a weekly podcast covering Star Wars news and speculation. Hosts and avid Star Wars fans James Hebert, Kev Garbett, Chris Hall, and Ed Bosshart discuss Star Wars movies, shows, news, books, and more from their perspectives and have loads of fun doing it. Mature Content.',
+		url: 'https://scruffypod.com',
 		locale: 'en_US',
 		type: 'website',
 	},

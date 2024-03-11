@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import { podbeanUrl } from 'app/(pages)/(links)/links'
+
 import styles from './Episodes.module.css'
 import EpisodeSummary from './EpisodeSummary'
 
@@ -17,7 +19,7 @@ export default function Episodes({ episode }) {
 						Posted: {pubDate}
 					</div>
 					<EpisodeSummary summary={episode.summary} />
-					<a className={styles.link} target="_blank" href={episode.link ? episode.link : 'https://zencastr.com/Just-Shillin'}>
+					<a className={styles.link} target="_blank" href={episode.link ? episode.link : podbeanUrl}>
 						Episode Link
 					</a>
 				</div>

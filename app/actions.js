@@ -6,7 +6,6 @@ import { appleRatingUrl, rssFeedUrl, spotifyUrl } from './(pages)/(links)/links'
 
 export async function getReviews() {
 	try {
-		// const res = await fetch('https://api.shawn.party/api/just-shillin/reviews', {
 		const res = await fetch(`https://api.shawn.party/api/pod-data/apple?url=${appleRatingUrl}`, {
 			next: { revalidate: 60 * 60 * 1 },
 		})

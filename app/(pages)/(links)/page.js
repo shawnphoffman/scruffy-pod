@@ -11,8 +11,9 @@ export default async function Home() {
 	return (
 		<>
 			<div className="pageDescription">
-				Join Andy and Shawn for a casual and light-hearted podcast experience. Discover what happens when two friends come together to share
-				their love for the things that make life awesome.
+				A stuck-up, half-witted, Star Wars Podcast. 4 scruffy dudes on a weekly podcast covering Star Wars news and speculation. Hosts and
+				avid Star Wars fans James Hebert, Kev Garbett, Chris Hall, and Ed Bosshart discuss Star Wars movies, shows, news, books, and more
+				from their perspectives and have loads of fun doing it. Mature Content.
 			</div>
 			<div className="ratingsWrapper">
 				<Suspense>
