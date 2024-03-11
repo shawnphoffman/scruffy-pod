@@ -123,6 +123,19 @@ const items = [
 	// 	icon: 'fa-solid fa-clouds',
 	// 	background: '#0560ff',
 	// },
+
+	{
+		title: 'Chris Hall - IG',
+		href: 'https://www.instagram.com/chrishallillustration',
+		icon: 'fa-brands fa-instagram',
+		background: '#c13584',
+	},
+	{
+		title: 'Chris Hall - Etsy',
+		href: 'https://www.etsy.com/uk/shop/BlackSheepRebellion',
+		icon: 'fa-brands fa-etsy',
+		background: '#F56400',
+	},
 ]
 
 export default items
