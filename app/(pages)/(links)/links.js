@@ -125,13 +125,13 @@ const items = [
 	// },
 
 	{
-		title: 'IG - Chris',
+		title: 'Chris Art',
 		href: 'https://www.instagram.com/chrishallillustration',
 		icon: 'fa-brands fa-instagram',
 		background: '#c13584',
 	},
 	{
-		title: 'Etsy - Chris',
+		title: 'Chris Shop',
 		href: 'https://www.etsy.com/uk/shop/BlackSheepRebellion',
 		icon: 'fa-brands fa-etsy',
 		background: '#F56400',
