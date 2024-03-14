@@ -4,11 +4,10 @@
 	--white: #fff;
 	--applePodcasts: #872ec4;
 	--spotify: #16883e;
-	--yellow: rgb(237, 237, 55);
 
-	--slp1: #00c875;
+	--slp1: #0095ff;
 	/* --slp2: #004040; */
-	--slp3: #ffee00;
+	--slp3: #fede00;
 	/* --slp4: hsl(180, 100%, 10%); */
 	--slp4: hsl(180, 100%, 7%);
 	--slp5: #242424;
@@ -90,7 +89,7 @@ a:hover {
 	flex-direction: column;
 	align-items: center;
 	flex: 1;
-	gap: 1rem;
+	gap: 1.5rem;
 }
 
 .pageDescription {
@@ -126,7 +125,7 @@ a:hover {
 
 .headerLogo {
 	height: auto;
-	width: auto;
+	/* width: auto; */
 	border-radius: 1rem;
 	border: 2px solid var(--slp5);
 }

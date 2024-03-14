@@ -4,8 +4,9 @@ import 'app/stars.css'
 import { GeistSans } from 'geist/font/sans'
 import Image from 'next/image'
 
-// import titleSvg from 'app/title.svg'
-import titleLogo from 'app/icon.webp'
+import titleSvg2 from 'app/title_grouped.svg'
+// import titleSvg from 'app/title_single.svg'
+// import titleLogo from 'app/icon.webp'
 import ActiveLink from 'components/ActiveLink'
 import StarBackground from 'components/StarBackground'
 
@@ -37,8 +38,9 @@ export default function RootLayout({ children }) {
 					<div className="wrapper">
 						<div className="page">
 							<div className="header">
-								<Image className="headerLogo" alt="Scruffy Lookin' Podcasters" src={titleLogo} width={320} height={320} priority />
-								{/* <Image src={titleSvg} alt="Scruffy Lookin' Podcasters" priority unoptimized className="headerLogo" /> */}
+								{/* <Image className="headerLogo" alt="Scruffy Lookin' Podcasters" src={titleLogo} width={320} height={320} priority /> */}
+								{/* <Image src={titleSvg} alt="Scruffy Lookin' Podcasters" width={400} priority unoptimized className="headerLogo" /> */}
+								<Image src={titleSvg2} alt="Scruffy Lookin' Podcasters" width={410} priority unoptimized className="headerLogo" />
 								<div className="navContainer">
 									<ActiveLink href="/" label="Links" />
 									<ActiveLink href="/episodes" label="Episodes" />

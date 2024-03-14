@@ -19,7 +19,7 @@ export default async function Reviews() {
 	if (!filteredReviews || !filteredReviews.length) return null
 
 	return (
-		<>
+		<div className={styles.wrapper}>
 			<div className={styles.heading}>Recent Reviews</div>
 			{filteredReviews.map(r => (
 				<div className={styles.container} key={r.title}>
@@ -33,6 +33,6 @@ export default async function Reviews() {
 					<div className={styles.text}>{r.text}</div>
 				</div>
 			))}
-		</>
+		</div>
 	)
 }

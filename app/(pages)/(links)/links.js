@@ -8,18 +8,6 @@ export const rssFeedUrl = 'https://feed.podbean.com/scruffypodcasters/feed.xml'
 export const podbeanUrl = 'https://scruffypodcasters.podbean.com'
 
 const items = [
-	// {
-	// 	title: 'Twitter',
-	// 	href: 'https://twitter.com/JTComlink',
-	// 	icon: 'fa-brands fa-twitter',
-	// 	background: '#0d7ac4',
-	// },
-	// {
-	// 	title: 'Twitter - Rik',
-	// 	href: 'https://twitter.com/cadbanesbounty',
-	// 	icon: 'fa-brands fa-twitter',
-	// 	background: '#0d7ac4',
-	// },
 	{
 		title: 'Apple Podcasts',
 		href: applePodcastUrl,
@@ -32,18 +20,18 @@ const items = [
 		icon: 'fa-brands fa-spotify',
 		background: 'var(--spotify)',
 	},
-	// {
-	// 	title: 'Email',
-	// 	href: 'mailto:feedback@justshillin.com',
-	// 	icon: 'fa-solid fa-at',
-	// 	background: '#52565e',
-	// },
-	// {
-	// 	title: 'TeePublic',
-	// 	href: 'https://www.teepublic.com/user/jammed-transmissions',
-	// 	icon: 'fak fa-teepublic',
-	// 	background: '#374ECD',
-	// },
+	{
+		title: 'Email',
+		href: 'mailto:scruffypodcasters@gmail.com',
+		icon: 'fa-solid fa-at',
+		background: '#52565e',
+	},
+	{
+		title: 'TeePublic',
+		href: 'https://www.teepublic.com/user/scruffylookinpodcasters',
+		icon: 'fak fa-teepublic',
+		background: '#374ECD',
+	},
 	{
 		title: 'Overcast',
 		href: `https://overcast.fm/itunes${applePodcastId}`,
@@ -68,19 +56,19 @@ const items = [
 	// 	icon: 'fa-brands fa-google-play',
 	// 	background: '#206ff2',
 	// },
-	// {
-	// 	title: 'Goodpods',
-	// 	href: 'https://goodpods.com/podcasts/just-shillin-303749',
-	// 	icon: 'fak fa-goodpods',
-	// 	background: '#fcdb00',
-	// 	color: 'var(--bg)',
-	// },
-	// {
-	// 	title: 'Amazon Music',
-	// 	href: 'https://music.amazon.com/podcasts/41b5996a-f09d-4657-991f-d495150756f3/just-shillin',
-	// 	icon: 'fa-brands fa-amazon',
-	// 	background: '#0077c1',
-	// },
+	{
+		title: 'Goodpods',
+		href: 'https://goodpods.com/podcasts/scruffy-looking-podcasters-a-star-wars-podcast-318983',
+		icon: 'fak fa-goodpods',
+		background: '#fcdb00',
+		color: 'var(--bg)',
+	},
+	{
+		title: 'Amazon Music',
+		href: 'https://music.amazon.com/podcasts/7b78aa2a-57db-477e-9ef4-bd13c54b2292/scruffy-looking-podcasters-a-star-wars-podcast',
+		icon: 'fa-brands fa-amazon',
+		background: '#0077c1',
+	},
 	// {
 	// 	title: 'iHeart',
 	// 	href: 'https://www.iheart.com/podcast/338-jammed-transmissions-a-sta-102467606/',
@@ -93,12 +81,12 @@ const items = [
 	// 	icon: 'fak fa-pocket-casts',
 	// 	background: '#ea150d',
 	// },
-	// {
-	// 	title: 'Radio Public',
-	// 	href: 'https://radiopublic.com/just-shillin-6pQpmN',
-	// 	icon: 'fak fa-radio-public',
-	// 	background: '#CE262F',
-	// },
+	{
+		title: 'Radio Public',
+		href: 'https://radiopublic.com/scruffy-looking-podcasters-a-star-69OBjQ',
+		icon: 'fak fa-radio-public',
+		background: '#CE262F',
+	},
 	// {
 	// 	title: 'Castbox',
 	// 	href: 'https://castbox.fm/podcasts/Jammed%20Transmissions:%20A%20Star%20Wars%20Podcast',
@@ -117,6 +105,18 @@ const items = [
 		icon: 'fa-solid fa-square-rss',
 		background: '#ce4a0c',
 	},
+	{
+		title: 'Twitter',
+		href: 'https://twitter.com/ScruffyPodcast',
+		icon: 'fa-brands fa-x-twitter',
+		background: '#0d7ac4',
+	},
+	{
+		title: 'Facebook',
+		href: 'https://www.facebook.com/ScruffyPodcasters/',
+		icon: 'fa-brands fa-facebook',
+		background: '#0866ff',
+	},
 	// {
 	// 	title: 'Bluesky Feed',
 	// 	href: 'https://bsky.app/profile/did:plc:q7ul4lz2j3d6qtcjzvz4rrjh/feed/shawnbot-pods',
@@ -125,16 +125,41 @@ const items = [
 	// },
 
 	{
-		title: 'Chris Hall - IG',
+		title: 'IG - Chris',
 		href: 'https://www.instagram.com/chrishallillustration',
 		icon: 'fa-brands fa-instagram',
 		background: '#c13584',
 	},
 	{
-		title: 'Chris Hall - Etsy',
+		title: 'Etsy - Chris',
 		href: 'https://www.etsy.com/uk/shop/BlackSheepRebellion',
 		icon: 'fa-brands fa-etsy',
 		background: '#F56400',
+	},
+
+	{
+		title: 'Ed',
+		href: 'https://twitter.com/ScruffyEdB',
+		icon: 'fa-brands fa-x-twitter',
+		background: '#0d7ac4',
+	},
+	{
+		title: 'James',
+		href: 'https://twitter.com/RealEcho207',
+		icon: 'fa-brands fa-x-twitter',
+		background: '#0d7ac4',
+	},
+	{
+		title: 'Kev',
+		href: 'https://twitter.com/kpg1974',
+		icon: 'fa-brands fa-x-twitter',
+		background: '#0d7ac4',
+	},
+	{
+		title: 'Chris',
+		href: 'https://twitter.com/chrishallbsdc',
+		icon: 'fa-brands fa-x-twitter',
+		background: '#0d7ac4',
 	},
 ]
 
