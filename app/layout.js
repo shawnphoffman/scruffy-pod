@@ -1,5 +1,6 @@
 import 'app/global.css'
 import 'app/stars.css'
+import '@shawnphoffman/pod-sites-common/index.css'
 
 import { GeistSans } from 'geist/font/sans'
 import Image from 'next/image'
