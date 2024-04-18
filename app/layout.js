@@ -12,16 +12,19 @@ import titleLogo from 'app/title.png'
 import ActiveLink from 'components/ActiveLink'
 import StarBackground from 'components/StarBackground'
 
+// const description = `A stuck-up, half-witted, Star Wars Podcast. 4 scruffy dudes on a weekly podcast covering Star Wars news and speculation. Hosts and avid Star Wars fans James Hebert, Kev Garbett, Chris Hall, and Ed Bosshart discuss Star Wars movies, shows, news, books, and more from their perspectives and have loads of fun doing it. Mature Content.`
+const title = `Scruffy Lookin' Podcasters`
+const description = `If you want Star Wars news... Google it! If you want two yanks and two brits sharing their life adventures and weekly shenanigans, whilst jumping into all things from a galaxy far far away, then this maybe the pod you're looking for.`
+const url = 'https://scruffypod.com'
+
 export const metadata = {
-	title: `Scruffy Lookin' Podcasters`,
-	description:
-		'A stuck-up, half-witted, Star Wars Podcast. 4 scruffy dudes on a weekly podcast covering Star Wars news and speculation. Hosts and avid Star Wars fans James Hebert, Kev Garbett, Chris Hall, and Ed Bosshart discuss Star Wars movies, shows, news, books, and more from their perspectives and have loads of fun doing it. Mature Content.',
-	metadataBase: 'https://scruffypod.com',
+	title,
+	description,
+	metadataBase: url,
 	openGraph: {
-		title: `Scruffy Lookin' Podcasters`,
-		description:
-			'A stuck-up, half-witted, Star Wars Podcast. 4 scruffy dudes on a weekly podcast covering Star Wars news and speculation. Hosts and avid Star Wars fans James Hebert, Kev Garbett, Chris Hall, and Ed Bosshart discuss Star Wars movies, shows, news, books, and more from their perspectives and have loads of fun doing it. Mature Content.',
-		url: 'https://scruffypod.com',
+		title,
+		description,
+		url: url,
 		locale: 'en_US',
 		type: 'website',
 	},

@@ -11,7 +11,7 @@ export default async function Home() {
 	return (
 		<>
 			<div className="pageDescription">
-				If you want Star Wars news... google it! If you want two yanks and two brits sharing their life adventures and weekly shenanigans,
+				If you want Star Wars news... Google it! If you want two yanks and two brits sharing their life adventures and weekly shenanigans,
 				whilst jumping into all things from a galaxy far far away, then this maybe the pod you&apos;re looking for.
 				<br />
 			</div>
