@@ -11,10 +11,14 @@ export default async function Home() {
 	return (
 		<>
 			<div className="pageDescription">
-				A stuck-up, half-witted, Star Wars Podcast. 4 scruffy dudes on a weekly podcast covering Star Wars news and speculation. Hosts and
-				avid Star Wars fans James Hebert, Kev Garbett, Chris Hall, and Ed Bosshart discuss Star Wars movies, shows, news, books, and more
-				from their perspectives and have loads of fun doing it. Mature Content.
+				If you want Star Wars news... google it! If you want two yanks and two brits sharing their life adventures and weekly shenanigans,
+				whilst jumping into all things from a galaxy far far away, then this maybe the pod you&apos;re looking for.
+				<br />
 			</div>
+			<blockquote className="quote">
+				<span>&quot;I&apos;ve never made it till the end&quot;</span>
+				<span>Josh Chapman – a proper Star Wars podcaster</span>
+			</blockquote>
 			<div className="ratingsWrapper">
 				<Suspense>
 					<RatingsApple />

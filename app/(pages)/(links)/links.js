@@ -32,12 +32,12 @@ const items = [
 		icon: 'fak fa-teepublic',
 		background: 'var(--teepublic)',
 	},
-	{
-		title: 'Overcast',
-		href: `https://overcast.fm/itunes${applePodcastId}`,
-		icon: 'fak fa-overcast fa-lg',
-		background: 'var(--overcast)',
-	},
+	// {
+	// 	title: 'Overcast',
+	// 	href: `https://overcast.fm/itunes${applePodcastId}`,
+	// 	icon: 'fak fa-overcast fa-lg',
+	// 	background: 'var(--overcast)',
+	// },
 	// {
 	// 	title: 'YouTube',
 	// 	href: 'https://www.youtube.com/@JustShillin',
@@ -56,19 +56,19 @@ const items = [
 	// 	icon: 'fa-brands fa-google-play',
 	// 	background: 'var(--googlepodcasts)',
 	// },
-	{
-		title: 'Goodpods',
-		href: 'https://goodpods.com/podcasts/scruffy-looking-podcasters-a-star-wars-podcast-318983',
-		icon: 'fak fa-goodpods',
-		background: 'var(--goodpods)',
-		color: 'var(--bg)',
-	},
-	{
-		title: 'Amazon Music',
-		href: 'https://music.amazon.com/podcasts/7b78aa2a-57db-477e-9ef4-bd13c54b2292/scruffy-looking-podcasters-a-star-wars-podcast',
-		icon: 'fa-brands fa-amazon',
-		background: 'var(--amazonmusic)',
-	},
+	// {
+	// 	title: 'Goodpods',
+	// 	href: 'https://goodpods.com/podcasts/scruffy-looking-podcasters-a-star-wars-podcast-318983',
+	// 	icon: 'fak fa-goodpods',
+	// 	background: 'var(--goodpods)',
+	// 	color: 'var(--bg)',
+	// },
+	// {
+	// 	title: 'Amazon Music',
+	// 	href: 'https://music.amazon.com/podcasts/7b78aa2a-57db-477e-9ef4-bd13c54b2292/scruffy-looking-podcasters-a-star-wars-podcast',
+	// 	icon: 'fa-brands fa-amazon',
+	// 	background: 'var(--amazonmusic)',
+	// },
 	// {
 	// 	title: 'iHeart',
 	// 	href: 'https://www.iheart.com/podcast/338-jammed-transmissions-a-sta-102467606/',
@@ -81,12 +81,12 @@ const items = [
 	// 	icon: 'fak fa-pocket-casts',
 	// 	background: 'var(--pocketcasts)',
 	// },
-	{
-		title: 'Radio Public',
-		href: 'https://radiopublic.com/scruffy-looking-podcasters-a-star-69OBjQ',
-		icon: 'fak fa-radio-public',
-		background: 'var(--radiopublic)',
-	},
+	// {
+	// 	title: 'Radio Public',
+	// 	href: 'https://radiopublic.com/scruffy-looking-podcasters-a-star-69OBjQ',
+	// 	icon: 'fak fa-radio-public',
+	// 	background: 'var(--radiopublic)',
+	// },
 	// {
 	// 	title: 'Castbox',
 	// 	href: 'https://castbox.fm/podcasts/Jammed%20Transmissions:%20A%20Star%20Wars%20Podcast',
@@ -123,44 +123,42 @@ const items = [
 	// 	icon: 'fa-solid fa-clouds',
 	// 	background: 'var(--bluesky)',
 	// },
-
-	{
-		title: 'Chris Art',
-		href: 'https://www.instagram.com/chrishallillustration',
-		icon: 'fa-brands fa-instagram',
-		background: 'var(--instagram)',
-	},
-	{
-		title: 'Chris Shop',
-		href: 'https://www.etsy.com/uk/shop/BlackSheepRebellion',
-		icon: 'fa-brands fa-etsy',
-		background: 'var(--etsy)',
-	},
-
-	{
-		title: 'Ed',
-		href: 'https://twitter.com/ScruffyEdB',
-		icon: 'fa-brands fa-x-twitter',
-		background: 'var(--twitter)',
-	},
-	{
-		title: 'James',
-		href: 'https://twitter.com/RealEcho207',
-		icon: 'fa-brands fa-x-twitter',
-		background: 'var(--twitter)',
-	},
-	{
-		title: 'Kev',
-		href: 'https://twitter.com/kpg1974',
-		icon: 'fa-brands fa-x-twitter',
-		background: 'var(--twitter)',
-	},
-	{
-		title: 'Chris',
-		href: 'https://twitter.com/chrishallbsdc',
-		icon: 'fa-brands fa-x-twitter',
-		background: 'var(--twitter)',
-	},
+	// {
+	// 	title: 'Chris Art',
+	// 	href: 'https://www.instagram.com/chrishallillustration',
+	// 	icon: 'fa-brands fa-instagram',
+	// 	background: 'var(--instagram)',
+	// },
+	// {
+	// 	title: 'Chris Shop',
+	// 	href: 'https://www.etsy.com/uk/shop/BlackSheepRebellion',
+	// 	icon: 'fa-brands fa-etsy',
+	// 	background: 'var(--etsy)',
+	// },
+	// {
+	// 	title: 'Ed',
+	// 	href: 'https://twitter.com/ScruffyEdB',
+	// 	icon: 'fa-brands fa-x-twitter',
+	// 	background: 'var(--twitter)',
+	// },
+	// {
+	// 	title: 'James',
+	// 	href: 'https://twitter.com/RealEcho207',
+	// 	icon: 'fa-brands fa-x-twitter',
+	// 	background: 'var(--twitter)',
+	// },
+	// {
+	// 	title: 'Kev',
+	// 	href: 'https://twitter.com/kpg1974',
+	// 	icon: 'fa-brands fa-x-twitter',
+	// 	background: 'var(--twitter)',
+	// },
+	// {
+	// 	title: 'Chris',
+	// 	href: 'https://twitter.com/chrishallbsdc',
+	// 	icon: 'fa-brands fa-x-twitter',
+	// 	background: 'var(--twitter)',
+	// },
 ]
 
 export default items
