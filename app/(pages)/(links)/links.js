@@ -99,12 +99,12 @@ const items = [
 	// 	icon: 'fak fa-zencastr',
 	// 	background: 'var(--zencastr)',
 	// },
-	// { TODO BRING THIS BACK
-	// 	title: 'RSS',
-	// 	href: rssFeedUrl,
-	// 	icon: 'fa-solid fa-square-rss',
-	// 	background: 'var(--rss)',
-	// },
+	{
+		title: 'RSS',
+		href: rssFeedUrl,
+		icon: 'fa-solid fa-square-rss',
+		background: 'var(--rss)',
+	},
 	{
 		title: 'Twitter',
 		href: 'https://twitter.com/ScruffyPodcast',
