@@ -9,6 +9,15 @@ module.exports = {
 			},
 		],
 	},
+	async redirects() {
+		return [
+			{
+				source: '/studio',
+				destination: 'https://pod-content-studio.vercel.app/studio',
+				permanent: false,
+			},
+		]
+	},
 	// async redirects() {
 	// 	return [
 	// 		{
