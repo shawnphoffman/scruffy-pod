@@ -36,7 +36,7 @@
 	/* TEXT */
 	/* ================== */
 	blockquote {
-		@apply p-4 my-4 text-xl italic font-medium leading-relaxed text-white border-s-4 border-sky-500 bg-zinc-900/75;
+		@apply p-4 my-4 text-xl italic font-medium leading-relaxed text-white border-s-4 border-sky-500 bg-neutral-900/75;
 	}
 
 	/* ================== */
@@ -44,7 +44,7 @@
 	/* ================== */
 	ul,
 	ol {
-		@apply space-y-1 list-inside text-zinc-100;
+		@apply space-y-1 list-inside text-neutral-100;
 	}
 	ul {
 		@apply list-disc;

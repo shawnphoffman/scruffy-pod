@@ -4,7 +4,7 @@ import { XMLParser } from 'fast-xml-parser'
 
 import { appleRatingUrl, rssFeedUrl, spotifyUrl } from './(pages)/(links)/links'
 
-export async function getReviews() {
+export async function getAppleReviews() {
 	try {
 		const res = await fetch(`https://api.shawn.party/api/pod-data/apple?url=${appleRatingUrl}`, {
 			next: { revalidate: 60 * 60 * 1 },
@@ -48,7 +48,7 @@ export async function getEpisodes() {
 		const parsed = parser.parse(xml)
 		const feedImg = parsed.rss.channel.image.url
 		const episodes = parsed.rss.channel.item.map(ep => {
-			console.log(ep)
+			// console.log(ep)
 			const imgSrc = ep['itunes:image'] ? ep['itunes:image']['@_href'] : feedImg
 			return {
 				guid: ep.guid['#text'],

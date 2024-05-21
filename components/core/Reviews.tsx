@@ -25,22 +25,20 @@ export default async function Reviews() {
 	if (!filteredReviews || !filteredReviews.length) return null
 
 	return (
-		<>
-			<div className="text-xl font-bold ">Recent Reviews</div>
-			<div className="flex flex-col w-full px-2 mb-8 divide-y rounded-lg bg-zinc-950/75 divide-sky-500">
-				{filteredReviews.map((r: Review) => (
-					<div className="flex flex-col justify-start w-full p-2 text-left" key={r.title}>
-						<div className="flex flex-row items-center justify-between">
-							<div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center text-sky-400">
-								<div className="font-bold">{`"${r.title}"`}</div>
-								<div className="text-base italic"> - {r.author}</div>
-							</div>
-							<Stars count={r.stars} />
+		<div className="border-brand2 border-4 rounded-2xl p-0 mb-4">
+			<div className="text-xl font-bold bg-brand2 text-black pb-2">Recent Reviews</div>
+			{filteredReviews.map((r: Review) => (
+				<div key={r.title} className="flex flex-col p-2 justify-start text-left text-sm m-2 rounded-lg bg-neutral-500/25">
+					<div className="flex flex-row items-center justify-between">
+						<div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+							<div className="font-bold text-brand2">{`"${r.title}"`}</div>
+							<div className="text-xs text-brand1 italic"> {r.author}</div>
 						</div>
-						<div className="py-2">{r.text}</div>
+						<Stars count={r.stars} />
 					</div>
-				))}
-			</div>
-		</>
+					<div className="py-2 text-xs leading-normal p-2">{r.text}</div>
+				</div>
+			))}
+		</div>
 	)
 }

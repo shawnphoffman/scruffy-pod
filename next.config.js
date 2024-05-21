@@ -11,6 +11,10 @@ module.exports = {
 				protocol: 'https',
 				hostname: 'cdn.sanity.io',
 			},
+			{
+				protocol: 'https',
+				hostname: 'pbcdn1.podbean.com',
+			},
 		],
 	},
 	async redirects() {
