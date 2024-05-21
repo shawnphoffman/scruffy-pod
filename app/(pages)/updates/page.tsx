@@ -6,7 +6,7 @@ export default async function UpdatesPage() {
 
 	return (
 		<div className="w-full max-w-3xl mb-8 border rounded-lg border-neutral-900 bg-neutral-950/75">
-			<div className="flex flex-col justify-center w-full p-2 divide-y divide-sky-500">
+			<div className="flex flex-col justify-center w-full p-2 divide-y divide-brand2">
 				{posts.map(post => {
 					const { author, mainImage, publishedAt, slug, _id, title } = post
 					return <PostRow key={_id} author={author} mainImage={mainImage} publishedAt={publishedAt} slug={slug} title={title} />

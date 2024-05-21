@@ -20,15 +20,15 @@
 		@apply mb-4 font-bold leading-snug;
 	}
 	h2 {
-		@apply mt-10 text-3xl text-red-600;
+		@apply mt-10 text-3xl text-brand1;
 		@apply md:text-4xl;
 	}
 	h3 {
-		@apply mt-8 text-2xl text-yellow-400;
+		@apply mt-8 text-2xl text-brand2/95;
 		@apply md:text-3xl;
 	}
 	h4 {
-		@apply mt-6 text-xl text-sky-400;
+		@apply mt-6 text-xl text-white/70;
 		@apply md:text-2xl;
 	}
 
@@ -36,7 +36,7 @@
 	/* TEXT */
 	/* ================== */
 	blockquote {
-		@apply p-4 my-4 text-xl italic font-medium leading-relaxed text-white border-s-4 border-sky-500 bg-neutral-900/75;
+		@apply p-4 my-4 text-xl italic font-medium leading-relaxed text-white border-s-4 border-brand2 bg-neutral-900/75;
 	}
 
 	/* ================== */
@@ -57,6 +57,6 @@
 	/* LINKS */
 	/* ================== */
 	a {
-		@apply text-sky-400;
+		@apply text-brand2 hover:text-brand1;
 	}
 }
