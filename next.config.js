@@ -7,6 +7,10 @@ module.exports = {
 				port: '',
 				pathname: '/**',
 			},
+			{
+				protocol: 'https',
+				hostname: 'cdn.sanity.io',
+			},
 		],
 	},
 	async redirects() {
@@ -16,15 +20,11 @@ module.exports = {
 				destination: 'https://pod-content-studio.vercel.app/studio',
 				permanent: false,
 			},
+			{
+				source: '/refresh',
+				destination: '/api/revalidate/episodes',
+				permanent: true,
+			},
 		]
 	},
-	// async redirects() {
-	// 	return [
-	// 		{
-	// 			source: '/links',
-	// 			destination: '/',
-	// 			permanent: true,
-	// 		},
-	// 	]
-	// },
 }
