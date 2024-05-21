@@ -16,7 +16,7 @@ const postFields = groq`
 export const postsListQuery =
 	process.env.VERCEL_ENV === 'production'
 		? groq`
-*[_type == "post" && "Just Shillin'" in categories[]->.title] | order(date desc, publishedAt desc) {
+*[_type == "post" && "Scruffy Lookin' Podcasters" in categories[]->.title] | order(date desc, publishedAt desc) {
   ${postFields}
 }`
 		: groq`
@@ -25,7 +25,7 @@ export const postsListQuery =
 }`
 
 export const postSlugsQuery = groq`
-*[_type == "post" && defined(slug.current) && "Just Shillin'" in categories[]->.title][].slug.current
+*[_type == "post" && defined(slug.current) && "Scruffy Lookin' Podcasters" in categories[]->.title][].slug.current
 `
 
 export const postBySlugQuery = groq`
