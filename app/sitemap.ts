@@ -1,4 +1,4 @@
-const root = 'https://scruffypod.com'
+const root = 'https://justshillin.com'
 
 export default function sitemap() {
 	return [
@@ -12,6 +12,10 @@ export default function sitemap() {
 		},
 		{
 			url: `${root}/listen-now`,
+			lastModified: new Date(),
+		},
+		{
+			url: `${root}/updates`,
 			lastModified: new Date(),
 		},
 	]

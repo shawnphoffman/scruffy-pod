@@ -1,9 +1,9 @@
 import { Suspense } from 'react'
 
-import { getEpisodes } from 'app/actions'
-// import Episode from 'components/Episode'
-import Episodes from 'components/Episodes'
-import Loading from 'components/Loading'
+import { getEpisodes } from '@/app/actions'
+// import Episode from '@/components/Episode'
+import Episodes from '@/components/Episodes'
+import Loading from '@/components/Loading'
 
 export const revalidate = 60 * 60 // 1 hour
 export const dynamic = 'force-dynamic'

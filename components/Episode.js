@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { podbeanUrl } from 'app/(pages)/(links)/links'
+import { podbeanUrl } from '@/app/(pages)/(links)/links'
 
 import styles from './Episodes.module.css'
 import EpisodeSummary from './EpisodeSummary'

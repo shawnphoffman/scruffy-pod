@@ -8,6 +8,12 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			colors: {
+				brand1: '#0095ff',
+				brand2: '#fede00',
+				brand3: 'hsl(180, 100%, 7%)',
+				brand4: '#242424',
+			},
 			backgroundImage: {
 				squiggle: "url('/squiggle.svg')",
 			},
