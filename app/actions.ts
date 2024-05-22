@@ -35,6 +35,28 @@ export async function getSpotifyReviews() {
 	}
 }
 
+function cleanEpisodeSummary(text: string) {
+	const index = text.indexOf('Email us at')
+	if (index !== -1) {
+		text = text.substring(0, index).trim()
+	}
+	// text = text.replace(/Email us at.*$/gi, '').trim()
+
+	// const regex1 = /(Chapters|^\d{2}:\d{2}:\d{2}.*)[\r\n]?/gm
+	// text = text.replace(regex1, '')
+
+	// const regex2 = /.*(?:https:\/\/justshillin\.com|feedback@justshillin\.com).*/gm
+	// text = text.replace(regex2, '')
+
+	// const regex3 = /\b(https?:\/\/\S+)\s+\[\1\]/g
+	// text = text.replace(regex3, '$1')
+
+	// const regexFinal = /[\r\n]{3,}/g
+	// text = text.replace(regexFinal, '\n').replace(/[\r\n]+\s*$/g, '')
+
+	return text
+}
+
 export async function getEpisodes() {
 	try {
 		const res = await fetch(rssFeedUrl, {
@@ -54,7 +76,7 @@ export async function getEpisodes() {
 				guid: ep.guid['#text'],
 				title: ep.title,
 				imgSrc,
-				summary: ep['itunes:summary'],
+				summary: cleanEpisodeSummary(ep['itunes:summary']),
 				link: ep.link,
 				pubDate: ep.pubDate,
 			}
