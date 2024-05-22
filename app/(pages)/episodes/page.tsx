@@ -20,7 +20,7 @@ const EpisodesClient = async () => {
 
 export default async function EpisodesPage() {
 	return (
-		<div className="w-full max-w-3xl p-4 pt-0 mb-8 border rounded-lg border-neutral-900 bg-neutral-950/75">
+		<div className="w-full max-w-3xl p-4 mb-8 border rounded-lg border-neutral-900 bg-neutral-950/75">
 			<Suspense fallback={<Loading />}>
 				<EpisodesClient />
 			</Suspense>

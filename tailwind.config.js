@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: [
@@ -14,9 +16,6 @@ module.exports = {
 				brand2: '#fede00',
 				brand3: 'hsl(180, 100%, 7%)',
 				brand4: '#242424',
-			},
-			backgroundImage: {
-				squiggle: "url('/squiggle.svg')",
 			},
 			keyframes: {
 				fadeInUp: {
@@ -53,5 +52,57 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		plugin(function ({ addComponents, theme }) {
+			addComponents({
+				'.link': {
+					backgroundImage: `linear-gradient(to right, ${theme('colors.brand2')}, ${theme('colors.brand2')} 50%, ${theme(
+						'colors.brand1'
+					)} 50%)`,
+					backgroundSize: '200% 100%',
+					backgroundPosition: '-100%',
+					display: 'inline-block',
+					position: 'relative',
+					transition: 'all 0.2s ease-in-out',
+					backgroundClip: 'text',
+					WebkitTextFillColor: 'transparent',
+					'&:hover': {
+						backgroundPosition: '0',
+					},
+					'&::before': {
+						content: '""',
+						display: 'block',
+						position: 'absolute',
+						bottom: '0px',
+						width: '0',
+						height: '3px',
+						transition: 'all 0.2s ease-in-out',
+						left: '0',
+						background: theme('colors.brand2'),
+					},
+					'&:hover::before': {
+						width: '100%',
+					},
+					'&.text-white': {
+						backgroundImage: `linear-gradient(to right, ${theme('colors.brand2')}, ${theme('colors.brand2')} 50%, ${theme(
+							'colors.white'
+						)} 50%)`,
+					},
+				},
+			})
+		}),
+	],
 }
+
+// @layer components {
+// 	.link {
+// 		@apply bg-[linear-gradient(to_right,#fede00,#fede00_50%,#60a5fa_50%)] bg-[size:200%_100%] bg-[position:-100%] inline-block relative transition-all duration-[0.2s] ease-[ease-in-out] bg-clip-text;
+// 		-webkit-text-fill-color: transparent;
+// 		/* Hover */
+// 		@apply hover:bg-[0];
+// 		/* Before */
+// 		@apply before:bg-brand2 before:content-[''] before:block before:absolute before:bottom-[-3px] before:w-0 before:h-[3px] before:transition-all before:duration-[0.2s] before:ease-[ease-in-out] before:left-0;
+// 		/* Hover Before */
+// 		@apply hover:before:w-full;
+// 	}
+// }

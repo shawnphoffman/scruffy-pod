@@ -19,12 +19,12 @@ export default function Episodes({ episode }) {
 				/>
 				<div className="flex flex-col self-stretch overflow-hidden whitespace-break-spaces text-wrap text-ellipsis">
 					<div className="mb-2 text-sm text-brand2">Posted: {pubDate}</div>
-					<div className="[&_a]:text-brand2 [&_a]:px-0.5 mb-1 [&_a]:pb-0.5 [&_a]:font-bold [&_a:hover]:text-brand1 [&_a:hover]:bg-squiggle [&_a]:break-words text-sm">
+					<div className="[&_a]:link [&_a]:px-0.5 mb-1 [&_a]:pb-0.5 [&_a]:font-medium [&_a:hover]:text-brand1 [&_a]:break-words text-sm">
 						<EpisodeSummary summary={episode.summary} />
 					</div>
 					<div className="flex items-end flex-1">
 						<a
-							className="inline-block text-base font-bold text-brand2 hover:text-brand1"
+							className="inline-block text-base font-bold link"
 							target="_blank"
 							href={episode.link ? episode.link : 'https://zencastr.com/Just-Shillin'}
 						>

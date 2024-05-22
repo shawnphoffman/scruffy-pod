@@ -8,11 +8,8 @@ export default function NotFound() {
 			<div className="flex flex-col w-full gap-2">
 				<h1 className="text-6xl font-bold text-brand2">Uh oh...</h1>
 				<h2 className="text-xl text-white/80">These aren&apos;t the droids you&apos;re looking for...</h2>
-				<Link
-					href="/"
-					className="flex flex-row items-center justify-center gap-2 text-2xl font-bold group hover:text-brand2 text-brand1 w-fit"
-				>
-					<span className="group-hover:bg-squiggle">Return to safety</span>
+				<Link href="/" className="flex flex-row items-center justify-center gap-2 text-2xl font-bold  text-brand1 w-fit">
+					<span className="link">Return to safety</span>
 					<FontAwesomeIcon icon={faArrowRight} />
 				</Link>
 			</div>

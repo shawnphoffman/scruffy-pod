@@ -15,7 +15,7 @@ export default function PageLayout({ children }) {
 			<div className="w-full px-2 py-0 mx-auto overflow-scroll h-dvh">
 				<div className="flex flex-col items-center w-full max-w-screen-xl mx-auto">
 					<div className="flex flex-col w-full max-w-4xl min-h-dvh">
-						<div className="flex flex-col items-center m-4 text-center">
+						<div className="flex flex-col items-center m-4 mb-2 text-center">
 							{/* IMAGE */}
 							<Image className="w-[410px]" alt="Scruffy Lookin' Podcasters" src={headerImage} width={410} priority />
 							{/* NAV */}

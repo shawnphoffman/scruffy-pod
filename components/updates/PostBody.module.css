@@ -57,6 +57,6 @@
 	/* LINKS */
 	/* ================== */
 	a {
-		@apply text-brand2 hover:text-brand1;
+		@apply link;
 	}
 }

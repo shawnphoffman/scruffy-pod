@@ -29,11 +29,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className={GeistSans.className}>
+		<html lang="en" className={`${GeistSans.className} bg-black h-full p-0 m-0 w-dvw`}>
 			<head>
 				<meta name="apple-itunes-app" content="app-id=1272718319" />
 			</head>
-			<body>{children}</body>
+			<body className="h-full p-0 m-0 w-dvw">{children}</body>
 		</html>
 	)
 }
