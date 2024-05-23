@@ -1,5 +1,7 @@
 import { groq } from 'next-sanity'
 
+const podName = 'Scruffy Lookin Podcasters'
+
 const postFields = groq`
   _id,
   _updatedAt,
@@ -16,7 +18,7 @@ const postFields = groq`
 export const postsListQuery =
 	process.env.VERCEL_ENV === 'production'
 		? groq`
-*[_type == "post" && "Scruffy Lookin' Podcasters" in categories[]->.title] | order(date desc, publishedAt desc) {
+*[_type == "post" && "${podName}" in categories[]->.title] | order(date desc, publishedAt desc) {
   ${postFields}
 }`
 		: groq`
@@ -25,7 +27,7 @@ export const postsListQuery =
 }`
 
 export const postSlugsQuery = groq`
-*[_type == "post" && defined(slug.current) && "Scruffy Lookin' Podcasters" in categories[]->.title][].slug.current
+*[_type == "post" && defined(slug.current) && "${podName}" in categories[]->.title][].slug.current
 `
 
 export const postBySlugQuery = groq`
