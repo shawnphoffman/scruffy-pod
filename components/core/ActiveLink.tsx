@@ -4,9 +4,15 @@ import classnames from 'classnames'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const ActiveLink = ({ label, href, ...rest }) => {
+type Props = {
+	label: string
+	href: string
+	fuzzy?: boolean
+}
+
+const ActiveLink = ({ label, href, fuzzy, ...rest }: Props) => {
 	const currentRoute = usePathname()
-	const isActive = currentRoute === href
+	const isActive = fuzzy ? currentRoute.toLowerCase().startsWith(href) : currentRoute === href
 
 	const conditionalClasses = classnames(
 		isActive ? 'text-brand2 underline-4 underline underline-offset-[7px] decoration-[3px]' : 'text-white link'
