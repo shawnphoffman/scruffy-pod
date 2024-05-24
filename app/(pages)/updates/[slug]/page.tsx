@@ -6,6 +6,7 @@ import PostBody from '@/components/updates/PostBody'
 import PostCoverImage from '@/components/updates/PostCoverImage'
 import PostTitle from '@/components/updates/PostTitle'
 import { getAllPostsSlugs, getPostBySlug } from '@/sanity/sanity.requests'
+import { urlForSanityImage } from '@/sanity/sanity.image'
 
 type PageProps = {
 	params: {
@@ -22,7 +23,7 @@ export default async function PostPage({ params }: PageProps) {
 		return notFound()
 	}
 
-	const { title, body = {}, mainImage, slug } = post
+	const { title, body = {}, mainImage } = post
 
 	return (
 		<div className="flex flex-col items-center justify-center w-full gap-4">
@@ -51,17 +52,19 @@ export async function generateMetadata({ params }: PageProps, parent: ResolvingM
 
 	const previousImages = (await parent).openGraph?.images || []
 
+	const mainImage = post.mainImage ? urlForSanityImage(post.mainImage).height(630).width(1200).url() : undefined
+
 	return {
 		title: post.title,
 		description: post.excerpt,
 		openGraph: {
 			title: post.title,
 			description: post.excerpt,
-			images: previousImages,
+			images: mainImage ? [mainImage, ...previousImages] : previousImages,
 			url: `/updates/${post.slug}`,
 			type: 'article',
 			publishedTime: post.publishedAt,
-			authors: [post.author?.name!],
+			authors: [post.author?.name!, 'Scruffy Lookin Podcasters'],
 		},
 	}
 }
