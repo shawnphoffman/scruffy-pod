@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: PageProps, parent: ResolvingM
 		openGraph: {
 			title: post.title,
 			description: post.excerpt,
-			images: mainImage ? [mainImage, ...previousImages] : previousImages,
+			images: mainImage ? [mainImage] : previousImages,
 			url: `/updates/${post.slug}`,
 			type: 'article',
 			publishedTime: post.publishedAt,
