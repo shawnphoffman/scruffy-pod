@@ -46,6 +46,10 @@
 	ol {
 		@apply space-y-1 list-inside text-neutral-100;
 	}
+	li ul,
+	li ol {
+		@apply my-0 ps-4;
+	}
 	ul {
 		@apply list-disc;
 	}

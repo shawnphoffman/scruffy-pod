@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import { urlForSanityImage } from '@/sanity/sanity.image'
 
@@ -11,35 +10,19 @@ interface CoverImageProps {
 }
 
 export default function PostCoverImage(props: CoverImageProps) {
-	const { title, slug, image: source, priority } = props
+	const { image, priority } = props
 
-	if (!source) return null
-
-	const image = source?.asset?._ref ? (
-		<div className="shadow-small">
-			<Image
-				className="h-auto w-full"
-				width={2000}
-				height={1000}
-				alt={source.alt || ''}
-				src={urlForSanityImage(source).height(1000).width(2000).url()}
-				sizes="100vw"
-				priority={priority}
-			/>
-		</div>
-	) : (
-		<div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
-	)
+	if (!image) return null
 
 	return (
-		<div className="sm:mx-0">
-			{slug ? (
-				<Link href={`/posts/${slug}`} aria-label={title}>
-					{image}
-				</Link>
-			) : (
-				image
-			)}
-		</div>
+		<Image
+			className="w-full h-auto rounded"
+			width={2000}
+			height={1000}
+			alt={image.alt || ''}
+			src={urlForSanityImage(image).height(1000).width(2000).url()}
+			sizes="100vw"
+			priority={priority}
+		/>
 	)
 }
