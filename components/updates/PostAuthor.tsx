@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { urlForSanityImage } from '@/sanity/sanity.image'
-import { type Author } from '@/sanity/sanity.types'
+import { type Author } from '@/sanity/sanity.types-old'
 
 export default function PostAuthor(props: Author) {
 	const { name, image } = props

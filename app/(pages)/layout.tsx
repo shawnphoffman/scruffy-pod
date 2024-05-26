@@ -19,7 +19,7 @@ export default function PageLayout({ children }) {
 							{/* IMAGE */}
 							<Image className="w-[410px]" alt="Scruffy Lookin' Podcasters" src={headerImage} width={410} priority />
 							{/* NAV */}
-							<div className="flex flex-row flex-wrap justify-center gap-4 mt-4">
+							<div className="flex flex-row flex-wrap justify-center gap-4 mt-4 gap-y-1">
 								<ActiveLink href="/" label="Links" />
 								<ActiveLink href="/episodes" label="Episodes" />
 								{process.env.VERCEL_ENV !== 'production' && <ActiveLink href="/updates" label="Updates" fuzzy />}
