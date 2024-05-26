@@ -15,7 +15,7 @@ interface PostImageProps {
 }
 
 const PostImage = (props: PostImageProps) => {
-	const { asset, alt, caption } = props
+	const { asset, caption } = props
 
 	const imageProps = useNextSanityImage(sanityClient, asset)
 
@@ -24,14 +24,14 @@ const PostImage = (props: PostImageProps) => {
 	return (
 		<figure>
 			<Image
-				alt={alt}
+				alt={caption || ''}
 				//
 				sizes="(max-width: 800px) 100vw, 800px"
-				className={classnames('mw-full h-auto', props.className)}
+				className={classnames('mw-full h-auto max-h-96 aspect-auto w-auto mx-auto', props.className)}
 				{...imageProps}
 			/>
 			{caption && (
-				<figcaption className="mt-2 text-sm italic text-center text-neutral-400 text-pretty">
+				<figcaption className="mt-2 text-base italic text-center text-neutral-400 text-pretty">
 					{/*  */}
 					{caption}
 				</figcaption>
