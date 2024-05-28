@@ -5,8 +5,8 @@ import PostAuthor from '@/components/updates/PostAuthor'
 import PostBody from '@/components/updates/PostBody'
 import PostCoverImage from '@/components/updates/PostCoverImage'
 import PostTitle from '@/components/updates/PostTitle'
-import { getAllPostsSlugs, getPostBySlug } from '@/sanity/sanity.requests'
 import { urlForSanityImage } from '@/sanity/sanity.image'
+import { getAllPostsSlugs, getPostBySlug } from '@/sanity/sanity.requests'
 
 type PageProps = {
 	params: {
@@ -33,7 +33,6 @@ export default async function PostPage({ params }: PageProps) {
 
 			<PostCoverImage title={title} image={mainImage} priority />
 
-			{/* <article className="w-full mb-8 text-left rounded-lg bg-neutral-950/90"> */}
 			<article className="w-full p-4 mb-8 text-left border rounded-lg border-neutral-900 bg-neutral-950/75">
 				<PostBody content={body} />
 			</article>

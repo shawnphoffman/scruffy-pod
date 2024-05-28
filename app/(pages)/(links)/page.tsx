@@ -1,12 +1,12 @@
 import { Suspense } from 'react'
 
-import items from './links'
-
 import LinkCard from '@/components/core/LinkCard'
 import Loading from '@/components/core/Loading'
 import RatingsApple from '@/components/core/RatingsApple'
 import RatingsSpotify from '@/components/core/RatingsSpotify'
 import Reviews from '@/components/core/Reviews'
+
+import items from './links'
 
 export default async function Home() {
 	return (

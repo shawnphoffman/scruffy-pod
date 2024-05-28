@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
 import { urlForSanityImage } from '@/sanity/sanity.image'
+import { POST_QUERYResult } from '@/sanity/sanity.types'
 
 import PostAuthor from './PostAuthor'
 import PostAuthorAvatar from './PostAuthorAvatar'
 import PostDate from './PostDate'
-import { POST_QUERYResult } from '@/sanity/sanity.types'
 
 type Props = {
 	post: NonNullable<POST_QUERYResult>

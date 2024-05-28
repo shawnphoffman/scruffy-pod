@@ -1,5 +1,4 @@
 import '@/app/(pages)/pages.css'
-
 import './icons'
 
 import Image from 'next/image'
