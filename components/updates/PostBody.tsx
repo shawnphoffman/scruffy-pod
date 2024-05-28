@@ -28,6 +28,11 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
 			)
 		},
 	},
+	marks: {
+		underline: ({ children }) => {
+			return <span className="underline underline-offset-2 decoration-brand1">{children}</span>
+		},
+	},
 }
 
 export default function PostBody({ content }) {
