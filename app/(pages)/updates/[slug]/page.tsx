@@ -17,9 +17,9 @@ type PageProps = {
 export default async function PostPage({ params }: PageProps) {
 	const post = await getPostBySlug(params?.slug || '')
 
-	// console.log(post)
+	// console.log({ post })
 
-	if (!post) {
+	if (!post?._id) {
 		return notFound()
 	}
 
