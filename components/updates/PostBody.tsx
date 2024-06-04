@@ -6,6 +6,20 @@ import YoutubeEmbed from './portableText/YoutubeEmbed'
 import styles from './PostBody.module.css'
 
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {
+	marks: {
+		textRed: ({ children }) => {
+			return <span className="text-red-500">{children}</span>
+		},
+		textBlue: ({ children }) => {
+			return <span className="text-brand1">{children}</span>
+		},
+		textGreen: ({ children }) => {
+			return <span className="text-lime-500">{children}</span>
+		},
+		underline: ({ children }) => {
+			return <span className="underline underline-offset-2 decoration-brand1">{children}</span>
+		},
+	},
 	types: {
 		image: ({ value }) => {
 			return <PostImage {...value} />
@@ -26,11 +40,6 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
 					))}
 				</div>
 			)
-		},
-	},
-	marks: {
-		underline: ({ children }) => {
-			return <span className="underline underline-offset-2 decoration-brand1">{children}</span>
 		},
 	},
 }

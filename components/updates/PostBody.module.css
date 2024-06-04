@@ -45,6 +45,9 @@
 	ul,
 	ol {
 		@apply space-y-1 list-inside text-neutral-100;
+		::marker {
+			@apply text-brand2;
+		}
 	}
 	li ul,
 	li ol {
