@@ -18,7 +18,7 @@ export default function PageLayout({ children }) {
 						<div className="flex flex-col items-center m-4 mb-2 text-center">
 							<h1 className="sr-only">{siteTitle}</h1>
 							{/* IMAGE */}
-							<Image className="w-[410px]" alt="Scruffy Lookin' Podcasters" src={headerImage} width={410} priority role="banner" />
+							<Image className="w-[410px]" alt="Scruffy Lookin' Podcasters" src={headerImage} width={410} priority />
 							{/* NAV */}
 							<nav className="flex flex-row flex-wrap justify-center gap-4 mt-4 gap-y-1">
 								<ActiveLink href="/" label="Links" />
