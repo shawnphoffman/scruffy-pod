@@ -11,6 +11,7 @@ export default function ListenNow() {
 				allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
 				sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
 				loading="lazy"
+				title="Listen Now"
 			></iframe>
 		</div>
 	)
