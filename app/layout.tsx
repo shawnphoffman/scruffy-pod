@@ -3,9 +3,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { GeistSans } from 'geist/font/sans'
 
-const title = `Scruffy Lookin' Podcasters`
-const description = `If you want Star Wars news... Google it! If you want two yanks and two brits sharing their life adventures and weekly shenanigans, whilst jumping into all things from a galaxy far far away, then this maybe the pod you're looking for.`
-const url = 'https://scruffypod.com'
+import { siteDescription as description, siteTitle as title, siteUrl as url } from '@/app/meta'
 
 export const metadata = {
 	title: {
