@@ -30,14 +30,14 @@ const PostImage = (props: PostImageProps) => {
 				//
 				sizes="(max-width: 800px) 100vw, 800px"
 				className={classnames(
-					'mw-full h-auto max-h-96 aspect-auto w-auto mx-auto hover:cursor-pointer hover:outline outline-brand1 outline-offset-2',
+					'mw-full h-auto max-h-96 aspect-auto w-auto mx-auto hover:cursor-pointer hover:outline outline-brand-blue outline-offset-2',
 					props.className
 				)}
 				onClick={() => setOpen(true)}
 				{...imageProps}
 			/>
 			{caption && (
-				<figcaption className="mt-2 text-base italic text-center text-neutral-400 text-pretty">
+				<figcaption className="mt-2 text-base italic text-center text-white/50 text-pretty">
 					{/*  */}
 					{caption}
 				</figcaption>

@@ -11,12 +11,12 @@ import items from './links'
 export default async function Home() {
 	return (
 		<>
-			<div className="w-full max-w-3xl text-base leading-normal sm:text-lg p-4 border rounded-lg border-neutral-900 bg-neutral-950/75">
+			<div className="w-full max-w-3xl text-base leading-normal sm:text-lg p-4 border rounded-lg border-brand-border bg-brand-background-transparent">
 				If you want Star Wars news... Google it! If you want two yanks and two brits sharing their life adventures and weekly shenanigans,
 				whilst jumping into all things from a galaxy far far away, then this maybe the pod you&apos;re looking for.
 			</div>
 			{/*  */}
-			<blockquote className="bg-neutral-950/75 w-fit px-8 py-2 mx-auto border-4 border-brand2 rounded-lg flex flex-col gap-1.5">
+			<blockquote className="bg-brand-background-transparent w-fit px-8 py-2 mx-auto border-4 border-brand-yellow rounded-lg flex flex-col gap-1.5">
 				<span className="font-bold text-lg leading-tight">&quot;I&apos;ve never made it till the end&quot;</span>
 				<span className="italic w-full text-white/75 text-sm">Josh Chapman – a proper Star Wars podcaster</span>
 			</blockquote>

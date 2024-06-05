@@ -15,7 +15,7 @@ const ActiveLink = ({ label, href, fuzzy, ...rest }: Props) => {
 	const isActive = fuzzy ? currentRoute.toLowerCase().startsWith(href) : currentRoute === href
 
 	const conditionalClasses = classnames(
-		isActive ? 'text-brand2 underline-4 underline underline-offset-[7px] decoration-[3px]' : 'text-white link'
+		isActive ? 'text-brand-yellow underline-4 underline underline-offset-[7px] decoration-[3px]' : 'text-white link'
 	)
 
 	return (

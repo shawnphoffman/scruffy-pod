@@ -13,13 +13,13 @@ export default function Episodes({ episode }) {
 				<Image
 					src={episode.imgSrc}
 					alt={episode.title}
-					className="w-32 md:w-48 h-fit aspect-square border-neutral-800 rounded-2xl border-2"
+					className="w-32 border-2 md:w-48 h-fit aspect-square border-brand-border rounded-2xl"
 					width={192}
 					height={192}
 				/>
 				<div className="flex flex-col self-stretch overflow-hidden whitespace-break-spaces text-wrap text-ellipsis">
-					<div className="mb-2 text-sm text-brand2">Posted: {pubDate}</div>
-					<div className="[&_a]:link [&_a]:px-0.5 mb-1 [&_a]:pb-0.5 [&_a]:font-medium [&_a:hover]:text-brand1 [&_a]:break-words text-sm">
+					<div className="mb-2 text-sm text-brand-yellow">Posted: {pubDate}</div>
+					<div className="[&_a]:link [&_a]:px-0.5 mb-1 [&_a]:pb-0.5 [&_a]:font-medium [&_a:hover]:text-brand-blue [&_a]:break-words text-sm">
 						<EpisodeSummary summary={episode.summary} />
 					</div>
 					<div className="flex items-end flex-1">
