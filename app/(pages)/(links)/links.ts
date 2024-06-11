@@ -1,36 +1,82 @@
+import { faFacebook, faSpotify, faXTwitter } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/brands'
+import { faAt, faCoffeeBeans, faRssSquare } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
+import { faPodcast } from '@awesome.me/kit-d7ccc5bb1a/icons/duotone/solid'
+import {
+	faGoodpods,
+	faOvercast,
+	faPocketCasts,
+	faRadioPublic,
+	faTeepublic,
+	faYoutubeMusic,
+	faZencastr,
+} from '@awesome.me/kit-d7ccc5bb1a/icons/kit/custom'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+
 export const spotifyId = '0smXt1crilKFVJg3RubFPK'
 export const spotifyUrl = `https://open.spotify.com/show/${spotifyId}`
 export const applePodcastId = '1272718319'
 export const applePodcastUrl = `https://podcasts.apple.com/us/podcast/id${applePodcastId}`
 export const appleRatingUrl = `${applePodcastUrl}?see-all=reviews`
 export const rssFeedUrl = 'https://feed.podbean.com/scruffypodcasters/feed.xml'
-
+export const goodpodsUrl = 'https://goodpods.com/podcasts/scruffy-looking-podcasters-a-star-wars-podcast-318983'
 export const podbeanUrl = 'https://scruffypodcasters.podbean.com'
 
-const items = [
+type LinkItem = {
+	title: string
+	href: string
+	icon: IconDefinition
+	background: string
+	color?: string
+}
+
+const items: LinkItem[] = [
 	{
 		title: 'Apple Podcasts',
 		href: applePodcastUrl,
-		icon: 'fa-solid fa-podcast',
+		icon: faPodcast,
 		background: 'bg-applepodcasts',
 	},
 	{
 		title: 'Spotify',
 		href: spotifyUrl,
-		icon: 'fa-brands fa-spotify',
+		icon: faSpotify,
 		background: 'bg-spotify',
 	},
 	{
 		title: 'Email',
 		href: 'mailto:scruffypodcasters@gmail.com',
-		icon: 'fa-solid fa-at',
+		icon: faAt,
 		background: 'bg-email',
 	},
 	{
 		title: 'TeePublic',
 		href: 'https://www.teepublic.com/user/scruffylookinpodcasters',
-		icon: 'fak fa-teepublic',
+		icon: faTeepublic,
 		background: 'bg-teepublic',
+	},
+	{
+		title: 'PodBean',
+		href: podbeanUrl,
+		icon: faCoffeeBeans,
+		background: 'bg-podbean',
+	},
+	{
+		title: 'RSS',
+		href: rssFeedUrl,
+		icon: faRssSquare,
+		background: 'bg-rss',
+	},
+	{
+		title: 'Twitter',
+		href: 'https://twitter.com/ScruffyPodcast',
+		icon: faXTwitter,
+		background: 'bg-twitter',
+	},
+	{
+		title: 'Facebook',
+		href: 'https://www.facebook.com/ScruffyPodcasters/',
+		icon: faFacebook,
+		background: 'bg-facebook',
 	},
 	// {
 	// 	title: 'Overcast',
@@ -44,12 +90,6 @@ const items = [
 	// 	icon: 'fa-brands fa-youtube',
 	// 	background: 'bg-youtube',
 	// },
-	{
-		title: 'PodBean',
-		href: podbeanUrl,
-		icon: 'fa-solid fa-coffee-beans',
-		background: 'bg-podbean',
-	},
 	// {
 	// 	title: 'Google Podcasts',
 	// 	href: 'https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy56ZW5jYXN0ci5jb20vZi9sNWJteTZ3bS5yc3M',
@@ -99,24 +139,6 @@ const items = [
 	// 	icon: 'fak fa-zencastr',
 	// 	background: 'bg-zencastr',
 	// },
-	{
-		title: 'RSS',
-		href: rssFeedUrl,
-		icon: 'fa-solid fa-square-rss',
-		background: 'bg-rss',
-	},
-	{
-		title: 'Twitter',
-		href: 'https://twitter.com/ScruffyPodcast',
-		icon: 'fa-brands fa-x-twitter',
-		background: 'bg-twitter',
-	},
-	{
-		title: 'Facebook',
-		href: 'https://www.facebook.com/ScruffyPodcasters/',
-		icon: 'fa-brands fa-facebook',
-		background: 'bg-facebook',
-	},
 	// {
 	// 	title: 'Bluesky Feed',
 	// 	href: 'https://bsky.app/profile/did:plc:q7ul4lz2j3d6qtcjzvz4rrjh/feed/shawnbot-pods',

@@ -1,10 +1,10 @@
-import { type IconProp } from '@fortawesome/fontawesome-svg-core'
+import { faSpaceStationMoonConstruction } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Loading() {
 	return (
 		<div className="text-4xl text-white">
-			<FontAwesomeIcon icon={'fa-solid fa-space-station-moon-construction' as IconProp} beatFade />
+			<FontAwesomeIcon icon={faSpaceStationMoonConstruction} beatFade />
 		</div>
 	)
 }

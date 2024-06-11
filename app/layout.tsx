@@ -1,6 +1,5 @@
 import '@/app/global.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import '@/app/(pages)/icons'
 
 import { GeistSans } from 'geist/font/sans'
 import Image from 'next/image'
