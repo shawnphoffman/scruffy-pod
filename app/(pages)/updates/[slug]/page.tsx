@@ -5,6 +5,7 @@ import PostAuthor from '@/components/updates/PostAuthor'
 import PostBody from '@/components/updates/PostBody'
 import PostCoverImage from '@/components/updates/PostCoverImage'
 import PostTitle from '@/components/updates/PostTitle'
+import ShareButtons from '@/components/updates/ShareButtons'
 import { urlForSanityImage } from '@/sanity/sanity.image'
 import { getAllPostsSlugs, getPostBySlug } from '@/sanity/sanity.requests'
 
@@ -23,13 +24,16 @@ export default async function PostPage({ params }: PageProps) {
 		return notFound()
 	}
 
-	const { title, body = {}, mainImage } = post
+	const { title, body = {}, mainImage, slug } = post
 
 	return (
 		<div className="flex flex-col items-center justify-center w-full gap-4">
 			<PostTitle>{title}</PostTitle>
 
-			<PostAuthor name={post.author?.name} image={post.author?.image} />
+			<div className="flex flex-row gap-8">
+				<PostAuthor name={post.author?.name} image={post.author?.image} />
+				<ShareButtons slug={slug} title={title} />
+			</div>
 
 			<PostCoverImage title={title} image={mainImage} priority />
 
