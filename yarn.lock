@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@awesome.me/kit-d7ccc5bb1a@^1.0.84":
-  version "1.0.84"
-  resolved "https://npm.fontawesome.com/@awesome.me/kit-d7ccc5bb1a/-/1.0.84/kit-d7ccc5bb1a-1.0.84.tgz#4a4798448ff12cb8f2706fd1c653576e173070ec"
-  integrity sha512-psDQHhrmijZ15E7xcXbyFSsmoV8LAYyWhvzYGp2y6NeBcSCgHBplcaUbc2nxwAa4b2fTQx7rYiexZ4LHgO/uZQ==
+"@awesome.me/kit-d7ccc5bb1a@^1.0.86":
+  version "1.0.86"
+  resolved "https://npm.fontawesome.com/@awesome.me/kit-d7ccc5bb1a/-/1.0.86/kit-d7ccc5bb1a-1.0.86.tgz#56a1ea5320f00d14ef869a65cbbd671918cb4766"
+  integrity sha512-YJKqVl1zdxBhEJA4qsQYsVbZwB3wvzTXOZnm7e2uQNx99V3weWeEQ7Pi8vdamQKjjiD1hWGwkpO7SwbpFKK2UA==
   dependencies:
     "@fortawesome/fontawesome-common-types" "^6.5.2"
 
