@@ -1,6 +1,7 @@
 import { groq } from 'next-sanity'
 
 const podName = 'Scruffy Lookin Podcasters'
+const podId = '79aa2892-e3ca-4ef0-869f-ef36846b241b'
 
 const postFields = groq`
   _id,
@@ -36,3 +37,11 @@ export const postBySlugQuery = groq`
   ${postFields}
 }
 `
+
+// =======================
+// AWARD QUERIES
+// =======================
+export const AWARDS_QUERY =
+	process.env.VERCEL_ENV === 'production'
+		? groq`*[_type == "award" && category._ref == "${podId}" && active==true]`
+		: groq`*[_type == "award" && category._ref == "${podId}"]`
