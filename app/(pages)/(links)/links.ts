@@ -1,15 +1,7 @@
 import { faFacebook, faSpotify, faXTwitter } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/brands'
 import { faAt, faCoffeeBeans, faRssSquare } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
 import { faPodcast } from '@awesome.me/kit-d7ccc5bb1a/icons/duotone/solid'
-import {
-	faGoodpods,
-	faOvercast,
-	faPocketCasts,
-	faRadioPublic,
-	faTeepublic,
-	faYoutubeMusic,
-	faZencastr,
-} from '@awesome.me/kit-d7ccc5bb1a/icons/kit/custom'
+import { faTeepublic } from '@awesome.me/kit-d7ccc5bb1a/icons/kit/custom'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
 export const spotifyId = '0smXt1crilKFVJg3RubFPK'
