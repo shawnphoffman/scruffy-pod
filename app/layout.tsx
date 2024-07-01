@@ -1,6 +1,7 @@
 import '@/app/global.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
+import { Analytics } from '@vercel/analytics/react'
 import { GeistSans } from 'geist/font/sans'
 import Image from 'next/image'
 
@@ -54,6 +55,8 @@ export default function RootLayout({ children }) {
 						<main className="flex flex-col items-center flex-1 gap-4 text-center">{children}</main>
 					</div>
 				</div>
+				{process.env.VERCEL_ENV && <Analytics />}
+				{/* <SpeedInsights /> */}
 			</body>
 		</html>
 	)
