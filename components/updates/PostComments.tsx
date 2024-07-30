@@ -1,5 +1,5 @@
 import { AppBskyFeedDefs, type AppBskyFeedGetPostThread } from '@atproto/api'
-import { faArrowsRepeat, faHeart } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
+import { faArrowsRepeat, faHeart, faMessage } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 
@@ -29,6 +29,8 @@ async function getPostThread(uri: string) {
 	}
 
 	const data = (await res.json()) as AppBskyFeedGetPostThread.OutputSchema
+
+	console.log('data', data)
 
 	if (!data || !AppBskyFeedDefs.isThreadViewPost(data.thread)) {
 		return null
@@ -60,6 +62,10 @@ export default async function PostComments({ url }: Props) {
 			</h2>
 			<Link href={postUrl} target="_blank" rel="noreferrer noopener" className="group">
 				<p className="flex flex-row gap-2">
+					<span className="group-hover:text-sky-500">
+						{thread.post.replyCount ?? 0} <FontAwesomeIcon icon={faMessage} title={`${thread.post.replyCount ?? 0} replies`} />
+					</span>
+					<>-</>
 					<span className="group-hover:text-pink-500">
 						{thread.post.likeCount ?? 0} <FontAwesomeIcon icon={faHeart} title={`${thread.post.likeCount ?? 0} likes`} />
 					</span>
