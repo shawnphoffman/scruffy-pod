@@ -3,7 +3,8 @@
 	"version": "1.1.0",
 	"private": true,
 	"dependencies": {
-		"@awesome.me/kit-d7ccc5bb1a": "^1.0.86",
+		"@atproto/api": "^0.12.25",
+		"@awesome.me/kit-d7ccc5bb1a": "^1.0.87",
 		"@fortawesome/fontawesome-svg-core": "^6.5.2",
 		"@fortawesome/react-fontawesome": "^0.2.2",
 		"@portabletext/react": "^3.1.0",

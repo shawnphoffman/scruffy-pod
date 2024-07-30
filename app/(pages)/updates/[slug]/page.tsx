@@ -1,8 +1,11 @@
+import { Suspense } from 'react'
 import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import Loading from '@/app/loading'
 import PostAuthor from '@/components/updates/PostAuthor'
 import PostBody from '@/components/updates/PostBody'
+import PostComments from '@/components/updates/PostComments'
 import PostCoverImage from '@/components/updates/PostCoverImage'
 import PostTitle from '@/components/updates/PostTitle'
 import ShareButtons from '@/components/updates/ShareButtons'
@@ -24,7 +27,7 @@ export default async function PostPage({ params }: PageProps) {
 		return notFound()
 	}
 
-	const { title, body = {}, mainImage, slug } = post
+	const { title, body = {}, mainImage, slug, commentsAtUrl } = post
 
 	return (
 		<div className="flex flex-col items-center justify-center w-full gap-4">
@@ -40,6 +43,10 @@ export default async function PostPage({ params }: PageProps) {
 			<article className="w-full p-4 mb-8 text-left border rounded-lg border-brand-border bg-brand-background-transparent">
 				<PostBody content={body} />
 			</article>
+
+			<Suspense fallback={<Loading />}>
+				<PostComments url={commentsAtUrl} />
+			</Suspense>
 		</div>
 	)
 }
