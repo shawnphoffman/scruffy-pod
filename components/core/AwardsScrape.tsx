@@ -41,36 +41,11 @@ async function fetchWithTimeout(url: string, options: RequestInit & { timeout?: 
 	}
 }
 
-// Utility function to retry failed requests
-async function fetchWithRetry(url: string, options: RequestInit & { timeout?: number; retries?: number } = {}) {
-	const { retries = 2, ...fetchOptions } = options
-	let lastError: Error | null = null
-
-	for (let attempt = 0; attempt <= retries; attempt++) {
-		try {
-			return await fetchWithTimeout(url, fetchOptions)
-		} catch (error) {
-			lastError = error instanceof Error ? error : new Error(String(error))
-
-			if (attempt === retries) {
-				break
-			}
-
-			// Wait before retrying (exponential backoff)
-			const delay = Math.min(1000 * Math.pow(2, attempt), 5000)
-			await new Promise(resolve => setTimeout(resolve, delay))
-		}
-	}
-
-	throw lastError || new Error('Request failed after all retries')
-}
-
 export async function getAwards() {
 	try {
-		const res = await fetchWithRetry(`https://api.shawn.party/api/pod-data/goodpods-scrape?url=${goodpodsUrl}`, {
+		const res = await fetchWithTimeout(`https://api.shawn.party/api/pod-data/goodpods-scrape?url=${goodpodsUrl}`, {
 			next: { revalidate: 3600 },
-			timeout: 15000, // 15 second timeout
-			retries: 2,
+			timeout: 1500, // 1.5 second timeout
 			// next: { revalidate: 360 },
 		})
 
