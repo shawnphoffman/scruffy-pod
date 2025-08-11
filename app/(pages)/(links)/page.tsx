@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 
-import Awards from '@/components/core/AwardsScrape'
+// import Awards from '@/components/core/AwardsScrape'
 import ErrorBoundary from '@/components/core/ErrorBoundary'
 import LinkCard from '@/components/core/LinkCard'
 import Loading from '@/components/core/Loading'
@@ -51,9 +51,9 @@ export default async function Home() {
 				})}
 			</div>
 
-			<Suspense>
+			{/* <Suspense>
 				<Awards />
-			</Suspense>
+			</Suspense> */}
 
 			<div className="flex flex-row flex-wrap justify-center w-full">
 				<Suspense fallback={<Loading />}>
