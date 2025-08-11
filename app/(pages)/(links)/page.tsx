@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 
 import Awards from '@/components/core/AwardsScrape'
+import ErrorBoundary from '@/components/core/ErrorBoundary'
 import LinkCard from '@/components/core/LinkCard'
 import Loading from '@/components/core/Loading'
 import RatingsApple from '@/components/core/RatingsApple'
@@ -10,9 +11,13 @@ import Reviews from '@/components/core/Reviews'
 
 import items from './links'
 
+// // Force dynamic rendering to prevent build-time API call issues
+// export const dynamic = 'force-dynamic'
+// export const revalidate = 0
+
 export default async function Home() {
 	return (
-		<>
+		<ErrorBoundary>
 			<div className="w-full max-w-3xl p-4 text-base leading-normal border rounded-lg sm:text-lg border-brand-border bg-brand-background-transparent">
 				If you want Star Wars news... Google it! If you want two yanks and two brits sharing their life adventures and weekly shenanigans,
 				whilst jumping into all things from a galaxy far far away, then this maybe the pod you&apos;re looking for.
@@ -55,6 +60,6 @@ export default async function Home() {
 					<Reviews />
 				</Suspense>
 			</div>
-		</>
+		</ErrorBoundary>
 	)
 }

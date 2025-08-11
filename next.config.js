@@ -23,6 +23,25 @@ module.exports = {
 			},
 		],
 	},
+	// // Add experimental features for better error handling
+	// experimental: {
+	// 	// Enable better error handling during build
+	// 	serverComponentsExternalPackages: [],
+	// 	// Increase build timeout
+	// 	buildTimeout: 120000, // 2 minutes
+	// },
+	// // Add webpack configuration for better error handling
+	// webpack: (config, { isServer }) => {
+	// 	if (isServer) {
+	// 		// Add timeout for server-side operations
+	// 		config.watchOptions = {
+	// 			...config.watchOptions,
+	// 			poll: 1000,
+	// 			aggregateTimeout: 300,
+	// 		}
+	// 	}
+	// 	return config
+	// },
 	async redirects() {
 		return [
 			{
