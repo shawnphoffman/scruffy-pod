@@ -59,19 +59,19 @@ async function getGoodpodsReviews() {
 		})
 
 		if (!res.ok) {
-			console.error(`Goodpods API error: ${res.status} ${res.statusText}`)
+			console.warn(`Goodpods API error: ${res.status} ${res.statusText}`)
 			return {}
 		}
 
 		const text = await res.text()
 		if (!text || text.trim() === '') {
-			console.error('Goodpods API returned empty response')
+			console.warn('Goodpods API returned empty response')
 			return {}
 		}
 
 		// Check if response starts with "An error" or similar error message
 		if (text.toLowerCase().startsWith('an error') || text.toLowerCase().includes('error')) {
-			console.error('Goodpods API returned error message:', text)
+			console.warn('Goodpods API returned error message:', text)
 			return {}
 		}
 
