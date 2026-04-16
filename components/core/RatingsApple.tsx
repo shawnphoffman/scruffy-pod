@@ -22,7 +22,7 @@ export default async function RatingsApple() {
 			</a>
 		)
 	} catch (error) {
-		console.error('Error rendering Apple ratings:', error)
+		console.warn('Error rendering Apple ratings:', error)
 		return null
 	}
 }

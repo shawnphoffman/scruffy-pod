@@ -4,26 +4,41 @@ import { XMLParser } from 'fast-xml-parser'
 
 import { appleRatingUrl, rssFeedUrl, spotifyUrl } from './(pages)/(links)/links'
 
-// Utility function to add timeout to fetch calls
+// Utility function to add a hard timeout to fetch calls. Uses Promise.race as
+// a belt-and-suspenders guarantee: we stop waiting at `timeout`ms no matter
+// what, even if the underlying fetch implementation ignores AbortSignal.
 async function fetchWithTimeout(url: string, options: RequestInit & { timeout?: number } = {}) {
 	const { timeout = 10000, ...fetchOptions } = options
 
 	const controller = new AbortController()
-	const timeoutId = setTimeout(() => controller.abort(), timeout)
+
+	let timeoutId: ReturnType<typeof setTimeout> | undefined
+	const timeoutPromise = new Promise<never>((_, reject) => {
+		timeoutId = setTimeout(() => {
+			controller.abort()
+			reject(new Error(`Request timeout after ${timeout}ms`))
+		}, timeout)
+	})
+
+	const fetchPromise = fetch(url, {
+		...fetchOptions,
+		signal: controller.signal,
+	})
+	// Swallow any late rejection (e.g. AbortError that fires after the race has
+	// already been won by timeoutPromise) so it doesn't surface as an unhandled
+	// promise rejection and crash the Node process.
+	fetchPromise.catch(() => {})
 
 	try {
-		const response = await fetch(url, {
-			...fetchOptions,
-			signal: controller.signal,
-		})
-		clearTimeout(timeoutId)
+		const response = await Promise.race([fetchPromise, timeoutPromise])
 		return response
 	} catch (error) {
-		clearTimeout(timeoutId)
 		if (error instanceof Error && error.name === 'AbortError') {
 			throw new Error(`Request timeout after ${timeout}ms`)
 		}
 		throw error
+	} finally {
+		if (timeoutId) clearTimeout(timeoutId)
 	}
 }
 
@@ -60,19 +75,19 @@ export async function getAppleReviews() {
 		})
 
 		if (!res.ok) {
-			console.error(`Apple API error: ${res.status} ${res.statusText}`)
+			console.warn(`Apple API error: ${res.status} ${res.statusText}`)
 			return {}
 		}
 
 		const text = await res.text()
 		if (!text || text.trim() === '') {
-			console.error('Apple API returned empty response')
+			console.warn('Apple API returned empty response')
 			return {}
 		}
 
 		// Check if response starts with "An error" or similar error message
 		if (text.toLowerCase().startsWith('an error') || text.toLowerCase().includes('error')) {
-			console.error('Apple API returned error message:', text)
+			console.warn('Apple API returned error message:', text)
 			return {}
 		}
 
@@ -85,7 +100,7 @@ export async function getAppleReviews() {
 			reviews,
 		}
 	} catch (e) {
-		console.error('Apple API fetch error:', e)
+		console.warn('Apple API fetch error:', e)
 		return {}
 	}
 }
@@ -99,19 +114,19 @@ export async function getSpotifyReviews() {
 		})
 
 		if (!res.ok) {
-			console.error(`Spotify API error: ${res.status} ${res.statusText}`)
+			console.warn(`Spotify API error: ${res.status} ${res.statusText}`)
 			return {}
 		}
 
 		const text = await res.text()
 		if (!text || text.trim() === '') {
-			console.error('Spotify API returned empty response')
+			console.warn('Spotify API returned empty response')
 			return {}
 		}
 
 		// Check if response starts with "An error" or similar error message
 		if (text.toLowerCase().startsWith('an error') || text.toLowerCase().includes('error')) {
-			console.error('Spotify API returned error message:', text)
+			console.warn('Spotify API returned error message:', text)
 			return {}
 		}
 
@@ -122,7 +137,7 @@ export async function getSpotifyReviews() {
 			rating: data?.vals?.rating ? Number(data?.vals?.rating) : undefined,
 		}
 	} catch (error) {
-		console.error('Failed to fetch Spotify data', error)
+		console.warn('Failed to fetch Spotify data', error)
 		return {}
 	}
 }
@@ -158,19 +173,19 @@ export async function getEpisodes() {
 		})
 
 		if (!res.ok) {
-			console.error(`RSS feed error: ${res.status} ${res.statusText}`)
+			console.warn(`RSS feed error: ${res.status} ${res.statusText}`)
 			return {}
 		}
 
 		const xml = await res.text()
 		if (!xml || xml.trim() === '') {
-			console.error('RSS feed returned empty response')
+			console.warn('RSS feed returned empty response')
 			return {}
 		}
 
 		// Check if response contains error messages
 		if (xml.toLowerCase().includes('error') || xml.toLowerCase().includes('not found')) {
-			console.error('RSS feed returned error message')
+			console.warn('RSS feed returned error message')
 			return {}
 		}
 
@@ -183,13 +198,13 @@ export async function getEpisodes() {
 		try {
 			parsed = parser.parse(xml)
 		} catch (parseError) {
-			console.error('Failed to parse RSS XML:', parseError)
+			console.warn('Failed to parse RSS XML:', parseError)
 			return {}
 		}
 
 		// Validate parsed structure
 		if (!parsed?.rss?.channel?.item || !Array.isArray(parsed.rss.channel.item)) {
-			console.error('Invalid RSS feed structure')
+			console.warn('Invalid RSS feed structure')
 			return {}
 		}
 

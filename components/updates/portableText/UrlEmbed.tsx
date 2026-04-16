@@ -16,7 +16,7 @@ async function UrlEmbed({ url, overrideTitle }: Props) {
 			const data = await response.json()
 			return data
 		} catch (error) {
-			console.error('Error fetching meta', error)
+			console.warn('Error fetching meta', error)
 		}
 	}
 

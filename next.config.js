@@ -1,5 +1,4 @@
 module.exports = {
-	staticPageGenerationTimeout: 120,
 	images: {
 		remotePatterns: [
 			{

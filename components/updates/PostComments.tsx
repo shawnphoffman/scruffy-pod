@@ -45,7 +45,7 @@ async function getPostThread(uri: string) {
 
 		return data?.thread
 	} catch (error) {
-		console.error('Bluesky thread fetch error:', error)
+		console.warn('Bluesky thread fetch error:', error)
 		return null
 	}
 }

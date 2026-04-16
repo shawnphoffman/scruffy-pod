@@ -22,11 +22,12 @@ export async function POST(req: NextRequest) {
 
 		// If the `_type` is `page`, then all `client.fetch` calls with
 		// `{next: {tags: ['page']}}` will be revalidated
-		revalidateTag(body._type)
+		revalidateTag(body._type, 'max')
 
 		return NextResponse.json({ body })
 	} catch (err) {
 		console.error(err)
-		return new Response(err.message, { status: 500 })
+		const message = err instanceof Error ? err.message : 'Unknown error'
+		return new Response(message, { status: 500 })
 	}
 }

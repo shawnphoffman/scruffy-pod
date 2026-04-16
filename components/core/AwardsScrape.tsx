@@ -50,19 +50,19 @@ export async function getAwards() {
 		})
 
 		if (!res.ok) {
-			console.error(`Awards API error: ${res.status} ${res.statusText}`)
+			console.warn(`Awards API error: ${res.status} ${res.statusText}`)
 			return []
 		}
 
 		const text = await res.text()
 		if (!text || text.trim() === '') {
-			console.error('Awards API returned empty response')
+			console.warn('Awards API returned empty response')
 			return []
 		}
 
 		// Check if response starts with "An error" or similar error message
 		if (text.toLowerCase().startsWith('an error') || text.toLowerCase().includes('error')) {
-			console.error('Awards API returned error message:', text)
+			console.warn('Awards API returned error message:', text)
 			return []
 		}
 
@@ -73,7 +73,7 @@ export async function getAwards() {
 
 		return awards
 	} catch (e) {
-		console.error('Awards API fetch error:', e)
+		console.warn('Awards API fetch error:', e)
 		return []
 	}
 }
@@ -84,7 +84,7 @@ export default async function Awards() {
 	try {
 		awards = await getAwards()
 	} catch (e) {
-		console.error('Error in Awards component:', e)
+		console.warn('Error in Awards component:', e)
 		return null
 	}
 

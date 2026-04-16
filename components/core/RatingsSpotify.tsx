@@ -22,7 +22,7 @@ export default async function RatingsSpotify() {
 			</a>
 		)
 	} catch (error) {
-		console.error('Error rendering Spotify ratings:', error)
+		console.warn('Error rendering Spotify ratings:', error)
 		return null
 	}
 }

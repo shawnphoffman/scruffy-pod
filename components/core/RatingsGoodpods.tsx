@@ -3,26 +3,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { goodpodsUrl } from '@/app/(pages)/(links)/links'
 
-// Utility function to add timeout to fetch calls
+// Utility function to add a hard timeout to fetch calls. Uses Promise.race so
+// we stop waiting at `timeout`ms even if the fetch implementation ignores the
+// AbortSignal (which can happen with some runtimes / Next.js fetch wrappers).
 async function fetchWithTimeout(url: string, options: RequestInit & { timeout?: number } = {}) {
 	const { timeout = 10000, ...fetchOptions } = options
 
 	const controller = new AbortController()
-	const timeoutId = setTimeout(() => controller.abort(), timeout)
+
+	let timeoutId: ReturnType<typeof setTimeout> | undefined
+	const timeoutPromise = new Promise<never>((_, reject) => {
+		timeoutId = setTimeout(() => {
+			controller.abort()
+			reject(new Error(`Request timeout after ${timeout}ms`))
+		}, timeout)
+	})
+
+	const fetchPromise = fetch(url, {
+		...fetchOptions,
+		signal: controller.signal,
+	})
+	// Swallow any late rejection (e.g. AbortError that fires after the race has
+	// already been won by timeoutPromise) so it doesn't surface as an unhandled
+	// promise rejection and crash the Node process.
+	fetchPromise.catch(() => {})
 
 	try {
-		const response = await fetch(url, {
-			...fetchOptions,
-			signal: controller.signal,
-		})
-		clearTimeout(timeoutId)
+		const response = await Promise.race([fetchPromise, timeoutPromise])
 		return response
 	} catch (error) {
-		clearTimeout(timeoutId)
 		if (error instanceof Error && error.name === 'AbortError') {
 			throw new Error(`Request timeout after ${timeout}ms`)
 		}
 		throw error
+	} finally {
+		if (timeoutId) clearTimeout(timeoutId)
 	}
 }
 
@@ -79,7 +94,7 @@ async function getGoodpodsReviews() {
 		// console.log('getGoodpodsReviews', data)
 		return data
 	} catch (e) {
-		console.error('Goodpods API fetch error:', e)
+		console.warn('Goodpods API fetch error:', e)
 		return {}
 	}
 }
@@ -103,7 +118,7 @@ export default async function RatingsGoodpods() {
 			</a>
 		)
 	} catch (error) {
-		console.error('Error rendering Goodpods ratings:', error)
+		console.warn('Error rendering Goodpods ratings:', error)
 		return null
 	}
 }

@@ -48,7 +48,7 @@ export default async function Reviews() {
 			</div>
 		)
 	} catch (error) {
-		console.error('Error rendering Reviews component:', error)
+		console.warn('Error rendering Reviews component:', error)
 		return null
 	}
 }
