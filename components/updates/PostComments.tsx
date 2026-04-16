@@ -10,33 +10,44 @@ type Props = {
 }
 
 async function getPostThread(uri: string) {
-	const params = new URLSearchParams({ uri })
+	try {
+		const params = new URLSearchParams({ uri })
 
-	const res = await fetch('https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?' + params.toString(), {
-		method: 'GET',
-		headers: {
-			Accept: 'application/json',
-		},
-		// cache: 'no-store',
-		next: {
-			revalidate: 60,
-		},
-	})
+		const controller = new AbortController()
+		const timeoutId = setTimeout(() => controller.abort(), 5000)
 
-	if (!res.ok) {
-		console.error(await res.text())
+		let res: Response
+		try {
+			res = await fetch('https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?' + params.toString(), {
+				method: 'GET',
+				headers: {
+					Accept: 'application/json',
+				},
+				signal: controller.signal,
+				next: {
+					revalidate: 60,
+				},
+			})
+		} finally {
+			clearTimeout(timeoutId)
+		}
+
+		if (!res.ok) {
+			console.warn('Bluesky thread fetch error:', res.status, res.statusText)
+			return null
+		}
+
+		const data = (await res.json()) as AppBskyFeedGetPostThread.OutputSchema
+
+		if (!data || !AppBskyFeedDefs.isThreadViewPost(data.thread)) {
+			return null
+		}
+
+		return data?.thread
+	} catch (error) {
+		console.error('Bluesky thread fetch error:', error)
 		return null
 	}
-
-	const data = (await res.json()) as AppBskyFeedGetPostThread.OutputSchema
-
-	console.log('data', data)
-
-	if (!data || !AppBskyFeedDefs.isThreadViewPost(data.thread)) {
-		return null
-	}
-
-	return data?.thread
 }
 
 export default async function PostComments({ url }: Props) {

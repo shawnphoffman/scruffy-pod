@@ -55,7 +55,8 @@ export async function getAppleReviews() {
 	try {
 		const res = await fetchWithRetry(`https://api.shawn.party/api/pod-data/apple?url=${appleRatingUrl}`, {
 			next: { revalidate: 60 * 60 * 1 },
-			timeout: 15000, // 15 second timeout
+			timeout: 5000,
+			retries: 1,
 		})
 
 		if (!res.ok) {
@@ -93,7 +94,8 @@ export async function getSpotifyReviews() {
 	try {
 		const res = await fetchWithRetry(`https://api.shawn.party/api/pod-data/spotify-scrape?url=${spotifyUrl}`, {
 			next: { revalidate: 60 * 60 * 6 },
-			timeout: 15000, // 15 second timeout
+			timeout: 5000,
+			retries: 1,
 		})
 
 		if (!res.ok) {
@@ -151,7 +153,8 @@ export async function getEpisodes() {
 	try {
 		const res = await fetchWithRetry(rssFeedUrl, {
 			next: { revalidate: 60 * 60 * 1 },
-			timeout: 15000, // 15 second timeout
+			timeout: 8000,
+			retries: 1,
 		})
 
 		if (!res.ok) {

@@ -54,8 +54,8 @@ async function getGoodpodsReviews() {
 	try {
 		const res = await fetchWithRetry(`https://api.shawn.party/api/pod-data/goodpods?url=${goodpodsUrl}`, {
 			next: { revalidate: 60 * 60 * 6 },
-			timeout: 15000, // 15 second timeout
-			retries: 2,
+			timeout: 5000,
+			retries: 1,
 		})
 
 		if (!res.ok) {
