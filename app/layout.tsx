@@ -3,7 +3,9 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { Analytics } from '@vercel/analytics/react'
 import { GeistSans } from 'geist/font/sans'
+import { draftMode } from 'next/headers'
 import Image from 'next/image'
+import { VisualEditing } from 'next-sanity/visual-editing'
 
 import { siteDescription as description, siteTitle, siteUrl as url } from '@/app/meta'
 import headerImage from '@/app/title.png'
@@ -31,7 +33,8 @@ export const metadata = {
 	},
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+	const { isEnabled: isDraftMode } = await draftMode()
 	return (
 		<html lang="en" className={`${GeistSans.className} bg-black h-full p-0 m-0 overflow-x-hidden w-dvw`}>
 			<head>
@@ -59,6 +62,7 @@ export default function RootLayout({ children }) {
 				</div>
 				{process.env.VERCEL_ENV && <Analytics />}
 				{/* <SpeedInsights /> */}
+				{isDraftMode && <VisualEditing />}
 			</body>
 		</html>
 	)
