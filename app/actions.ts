@@ -68,7 +68,7 @@ async function fetchWithRetry(url: string, options: RequestInit & { timeout?: nu
 
 export async function getAppleReviews() {
 	try {
-		const res = await fetchWithRetry(`https://api.shawn.party/api/pod-data/apple?url=${appleRatingUrl}`, {
+		const res = await fetchWithRetry(`https://api.shawn.party/api/podcast-data/apple?url=${appleRatingUrl}`, {
 			next: { revalidate: 60 * 60 * 1 },
 			timeout: 5000,
 			retries: 1,
@@ -107,7 +107,7 @@ export async function getAppleReviews() {
 
 export async function getSpotifyReviews() {
 	try {
-		const res = await fetchWithRetry(`https://api.shawn.party/api/pod-data/spotify-scrape?url=${spotifyUrl}`, {
+		const res = await fetchWithRetry(`https://api.shawn.party/api/podcast-data/spotify-scrape?url=${spotifyUrl}`, {
 			next: { revalidate: 60 * 60 * 6 },
 			timeout: 5000,
 			retries: 1,

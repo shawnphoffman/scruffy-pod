@@ -43,7 +43,7 @@ async function fetchWithTimeout(url: string, options: RequestInit & { timeout?: 
 
 export async function getAwards() {
 	try {
-		const res = await fetchWithTimeout(`https://api.shawn.party/api/pod-data/goodpods-scrape?url=${goodpodsUrl}`, {
+		const res = await fetchWithTimeout(`https://api.shawn.party/api/podcast-data/goodpods-scrape?url=${goodpodsUrl}`, {
 			next: { revalidate: 3600 },
 			timeout: 1500, // 1.5 second timeout
 			// next: { revalidate: 360 },

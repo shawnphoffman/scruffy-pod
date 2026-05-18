@@ -67,7 +67,7 @@ async function fetchWithRetry(url: string, options: RequestInit & { timeout?: nu
 
 async function getGoodpodsReviews() {
 	try {
-		const res = await fetchWithRetry(`https://api.shawn.party/api/pod-data/goodpods?url=${goodpodsUrl}`, {
+		const res = await fetchWithRetry(`https://api.shawn.party/api/podcast-data/goodpods?url=${goodpodsUrl}`, {
 			next: { revalidate: 60 * 60 * 6 },
 			timeout: 5000,
 			retries: 1,
