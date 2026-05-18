@@ -1,6 +1,35 @@
-import tailwindColors from '@shawnphoffman/pod-sites-common/tailwind'
 import colors from 'tailwindcss/colors'
 import plugin from 'tailwindcss/plugin'
+
+const podSitesColors = {
+	amazonmusic: '#0077c1',
+	applepodcasts: '#872ec4',
+	bluesky: '#0560ff',
+	castbox: '#db3c0e',
+	discord: '#5865F2',
+	email: '#52565e',
+	etsy: '#f56400',
+	facebook: '#0866ff',
+	goodpods: '#fcdb00',
+	googlepodcasts: '#206ff2',
+	iheart: '#c6002b',
+	instagram: '#c13584',
+	overcast: '#be5a01',
+	patreon: '#d93b26',
+	pocketcasts: '#ea150d',
+	podbean: '#5f7e1b',
+	radiopublic: '#ce262f',
+	rss: '#ce4a0c',
+	spotify: '#16883e',
+	teepublic: '#374ecd',
+	threads: '#222',
+	tiktok: '#eb004a',
+	twitch: '#9146ff',
+	twitter: '#0d7ac4',
+	youtube: '#ee0000',
+	zencastr: '#1474e0',
+}
+
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -13,6 +42,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
+				...podSitesColors,
 				brand: {
 					yellow: colors.yellow['400'],
 					blue: colors.blue['400'],
@@ -35,7 +65,6 @@ module.exports = {
 		},
 	},
 	plugins: [
-		tailwindColors.default,
 		plugin(function ({ addComponents, theme }) {
 			addComponents({
 				'.link': {
