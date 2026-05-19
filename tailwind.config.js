@@ -38,6 +38,7 @@ module.exports = {
 		'./components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./sanity/**/*.{js,ts,jsx,tsx,mdx}',
 		'./utils/**/*.{js,ts,jsx,tsx,mdx}',
+		'./node_modules/@shawnphoffman/pod-sites-shared/dist/**/*.{js,mjs,cjs}',
 	],
 	theme: {
 		extend: {
