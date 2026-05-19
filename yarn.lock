@@ -1049,6 +1049,11 @@
     use-effect-event "^2.0.3"
     xstate "^5.21.0"
 
+"@shawnphoffman/pod-sites-shared@^0.1.0":
+  version "0.1.0"
+  resolved "https://npm.pkg.github.com/download/@shawnphoffman/pod-sites-shared/0.1.0/e07ff36b08cf70b4beed7b4706a1a62c38b7d53b#e07ff36b08cf70b4beed7b4706a1a62c38b7d53b"
+  integrity sha512-2PrvyVcqPzTXIT6NayeU1e9Sdr6excy28FSvk9d6YPNcmaPABifHOUVAbkRYPIgVahuMHU1dB2s11ThNrxNCDw==
+
 "@svta/cml-608@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@svta/cml-608/-/cml-608-1.0.1.tgz#57f16c6c973fc36f0ddb379b8b02803f062e62fc"

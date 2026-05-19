@@ -8,6 +8,7 @@
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/react-fontawesome": "^3.2.0",
     "@portabletext/react": "^4.0.3",
+    "@shawnphoffman/pod-sites-shared": "^0.1.0",
     "@sanity/client": "^7.11.2",
     "@sanity/image-url": "^1.2.0",
     "@sanity/types": "^4.10.1",
