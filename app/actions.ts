@@ -1,7 +1,7 @@
 'use server'
 
 import { fetchWithRetry } from '@shawnphoffman/pod-sites-shared/fetch'
-import { XMLParser } from 'fast-xml-parser'
+import { parseFeed } from '@shawnphoffman/pod-sites-shared/rss'
 
 import { appleRatingUrl, rssFeedUrl, spotifyUrl } from './(pages)/(links)/links'
 
@@ -19,16 +19,8 @@ export async function getAppleReviews() {
 		}
 
 		const text = await res.text()
-		if (!text || text.trim() === '') {
-			console.warn('Apple API returned empty response')
-			return {}
-		}
-
-		// Check if response starts with "An error" or similar error message
-		if (text.toLowerCase().startsWith('an error') || text.toLowerCase().includes('error')) {
-			console.warn('Apple API returned error message:', text)
-			return {}
-		}
+		if (!text || text.trim() === '') return {}
+		if (text.toLowerCase().startsWith('an error') || text.toLowerCase().includes('error')) return {}
 
 		const data = JSON.parse(text)
 		const { rating, ratingsUrl, reviews } = data
@@ -52,25 +44,13 @@ export async function getSpotifyReviews() {
 			retries: 1,
 		})
 
-		if (!res.ok) {
-			console.warn(`Spotify API error: ${res.status} ${res.statusText}`)
-			return {}
-		}
+		if (!res.ok) return {}
 
 		const text = await res.text()
-		if (!text || text.trim() === '') {
-			console.warn('Spotify API returned empty response')
-			return {}
-		}
-
-		// Check if response starts with "An error" or similar error message
-		if (text.toLowerCase().startsWith('an error') || text.toLowerCase().includes('error')) {
-			console.warn('Spotify API returned error message:', text)
-			return {}
-		}
+		if (!text || text.trim() === '') return {}
+		if (text.toLowerCase().startsWith('an error') || text.toLowerCase().includes('error')) return {}
 
 		const data = JSON.parse(text)
-		// console.log('Spotify data', data)
 		return {
 			url: data?.url,
 			rating: data?.vals?.rating ? Number(data?.vals?.rating) : undefined,
@@ -81,90 +61,7 @@ export async function getSpotifyReviews() {
 	}
 }
 
-function cleanEpisodeSummary(text: string) {
-	const index = text.indexOf('Email us at')
-	if (index !== -1) {
-		text = text.substring(0, index).trim()
-	}
-	// text = text.replace(/Email us at.*$/gi, '').trim()
-
-	// const regex1 = /(Chapters|^\d{2}:\d{2}:\d{2}.*)[\r\n]?/gm
-	// text = text.replace(regex1, '')
-
-	// const regex2 = /.*(?:https:\/\/justshillin\.com|feedback@justshillin\.com).*/gm
-	// text = text.replace(regex2, '')
-
-	// const regex3 = /\b(https?:\/\/\S+)\s+\[\1\]/g
-	// text = text.replace(regex3, '$1')
-
-	// const regexFinal = /[\r\n]{3,}/g
-	// text = text.replace(regexFinal, '\n').replace(/[\r\n]+\s*$/g, '')
-
-	return text
-}
-
 export async function getEpisodes() {
-	try {
-		const res = await fetchWithRetry(rssFeedUrl, {
-			next: { revalidate: 60 * 60 * 1 },
-			timeout: 8000,
-			retries: 1,
-		})
-
-		if (!res.ok) {
-			console.warn(`RSS feed error: ${res.status} ${res.statusText}`)
-			return {}
-		}
-
-		const xml = await res.text()
-		if (!xml || xml.trim() === '') {
-			console.warn('RSS feed returned empty response')
-			return {}
-		}
-
-		// Check if response contains error messages
-		if (xml.toLowerCase().includes('error') || xml.toLowerCase().includes('not found')) {
-			console.warn('RSS feed returned error message')
-			return {}
-		}
-
-		const parser = new XMLParser({
-			ignoreAttributes: false,
-			attributeNamePrefix: '@_',
-		})
-
-		let parsed
-		try {
-			parsed = parser.parse(xml)
-		} catch (parseError) {
-			console.warn('Failed to parse RSS XML:', parseError)
-			return {}
-		}
-
-		// Validate parsed structure
-		if (!parsed?.rss?.channel?.item || !Array.isArray(parsed.rss.channel.item)) {
-			console.warn('Invalid RSS feed structure')
-			return {}
-		}
-
-		const feedImg = parsed.rss.channel.image?.url
-		const episodes = parsed.rss.channel.item.map(ep => {
-			// console.log(ep)
-			const imgSrc = ep['itunes:image'] ? ep['itunes:image']['@_href'] : feedImg
-			return {
-				guid: ep.guid?.['#text'] || ep.guid || '',
-				title: ep.title || 'Untitled Episode',
-				imgSrc: imgSrc || '',
-				summary: cleanEpisodeSummary(ep['itunes:summary'] || ''),
-				link: ep.link || '',
-				pubDate: ep.pubDate || '',
-			}
-		})
-		return {
-			episodes,
-		}
-	} catch (error) {
-		console.log('RSS feed fetch error:', error)
-		return {}
-	}
+	const { episodes } = await parseFeed(rssFeedUrl, { timeout: 8000, retries: 1, revalidateSeconds: 60 * 60 })
+	return { episodes }
 }
