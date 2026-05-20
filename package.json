@@ -19,6 +19,7 @@
     "fast-xml-parser": "^5.2.5",
     "fuse.js": "^6.6.2",
     "geist": "^1.5.1",
+    "motion": "^12.38.0",
     "next": "16.2.4",
     "next-sanity": "^11.4.2",
     "next-sanity-image": "^6.2.0",
