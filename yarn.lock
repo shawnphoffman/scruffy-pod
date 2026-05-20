@@ -893,10 +893,20 @@
     get-it "^8.6.7"
     rxjs "^7.0.0"
 
-"@sanity/client@^7.11.2", "@sanity/client@^7.13.2":
+"@sanity/client@^7.13.2":
   version "7.21.0"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-7.21.0.tgz#0f9819558d27c56f1466559f06fbfe70cf3bbc39"
   integrity sha512-j3SdOGy9ggQSj9LtlrV8x4jaZgJmyYKNB5cXpXWkMLgi2/v0U+OTu0mHj17smioTdQSCHuVyJaxGcdpu3hxoOA==
+  dependencies:
+    "@sanity/eventsource" "^5.0.2"
+    get-it "^8.7.2"
+    nanoid "^3.3.11"
+    rxjs "^7.0.0"
+
+"@sanity/client@^7.22":
+  version "7.22.0"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-7.22.0.tgz#f2d72c1660e7aedbe2de1ed93e7b36b946b21e13"
+  integrity sha512-KqN9cowZwfZNCwCchRaz1B9WrZTThQxX/gfJhJO1uKJBuk/JcbYGBiSK9CSqocWoYDQ/QqANVXy1r7a8zognww==
   dependencies:
     "@sanity/eventsource" "^5.0.2"
     get-it "^8.7.2"
@@ -1049,10 +1059,10 @@
     use-effect-event "^2.0.3"
     xstate "^5.21.0"
 
-"@shawnphoffman/pod-sites-shared@^0.5.1":
-  version "0.5.1"
-  resolved "https://npm.pkg.github.com/download/@shawnphoffman/pod-sites-shared/0.5.1/42f3cdd2c162fa135acf3c0e658620a6d7da77b9#42f3cdd2c162fa135acf3c0e658620a6d7da77b9"
-  integrity sha512-wuhGUyU1mwXIWRYdrkTwcMEuanClsZPjmD7FZyUjRx8c/y87ahlUqG2KDvCqApIsZKTee7Py7vJMejuqDAfqvA==
+"@shawnphoffman/pod-sites-shared@^0.6.0-rc.1":
+  version "0.6.0-rc.1"
+  resolved "https://npm.pkg.github.com/download/@shawnphoffman/pod-sites-shared/0.6.0-rc.1/f1d4e93411ef0429548196d3e579f698edcb8697#f1d4e93411ef0429548196d3e579f698edcb8697"
+  integrity sha512-1iNBlnUFtbcS9D2r0apZlbxuOSNBd4n7RekGfjANabvIhXQmlA0N1VvZshTxKqYQsnFM/H/u4rgAVqXtUnT8Aw==
 
 "@svta/cml-608@1.0.1":
   version "1.0.1"
