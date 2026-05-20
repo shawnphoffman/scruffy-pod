@@ -28,7 +28,7 @@ export default async function PostPage(props: PageProps) {
 		return notFound()
 	}
 
-	const { title, body = {}, mainImage, slug, commentsAtUrl } = post
+	const { title, body = [], mainImage, slug, commentsAtUrl, predictions } = post
 
 	return (
 		<div className="flex flex-col items-center justify-center w-full gap-4">
@@ -42,7 +42,7 @@ export default async function PostPage(props: PageProps) {
 			<PostCoverImage title={title} image={mainImage} priority />
 
 			<article className="w-full p-4 mb-8 text-left border rounded-lg border-brand-border bg-brand-background-transparent">
-				<PostBody content={body} />
+				<PostBody content={body} predictions={predictions} />
 			</article>
 
 			<Suspense fallback={<Loading />}>
