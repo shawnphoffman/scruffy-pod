@@ -54,7 +54,7 @@
     "@atproto/lexicon" "^0.4.0"
     zod "^3.21.4"
 
-"@awesome.me/kit-d7ccc5bb1a@^1.0.87":
+"@awesome.me/kit-d7ccc5bb1a@1.0.87":
   version "1.0.87"
   resolved "https://npm.fontawesome.com/@awesome.me/kit-d7ccc5bb1a/-/1.0.87/kit-d7ccc5bb1a-1.0.87.tgz#01436ad7c46b26d4b43b5f180ffade82b450e1a7"
   integrity sha512-VGbmaXhHvxzJRK5R4dx8iW/qY8BRW6A+PVFFGewoFF++288Jf6WySjYsgHgu/f9P6WUim7fsCIK7uAwhYYzUtA==
@@ -330,24 +330,24 @@
 
 "@fortawesome/fontawesome-common-types@7.2.0":
   version "7.2.0"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-7.2.0.tgz#ae54831ab5974bc1a64e8b07410f2da2b4abf87f"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-7.2.0.tgz#ae54831ab5974bc1a64e8b07410f2da2b4abf87f"
   integrity sha512-IpR0bER9FY25p+e7BmFH25MZKEwFHTfRAfhOyJubgiDnoJNsSvJ7nigLraHtp4VOG/cy8D7uiV0dLkHOne5Fhw==
 
 "@fortawesome/fontawesome-common-types@^6.5.2":
   version "6.5.2"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/6.5.2/fontawesome-common-types-6.5.2.tgz#eaf2f5699f73cef198454ebc0c414e3688898179"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.5.2.tgz#eaf2f5699f73cef198454ebc0c414e3688898179"
   integrity sha512-gBxPg3aVO6J0kpfHNILc+NMhXnqHumFxOmjYCFfOiLZfwhnnfhtsdA2hfJlDnj+8PjAs6kKQPenOTKj3Rf7zHw==
 
-"@fortawesome/fontawesome-svg-core@^7.2.0":
+"@fortawesome/fontawesome-svg-core@7.2.0":
   version "7.2.0"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-7.2.0.tgz#813550a5e8946a798e170d3f7331a685f8f8a550"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-7.2.0.tgz#813550a5e8946a798e170d3f7331a685f8f8a550"
   integrity sha512-6639htZMjEkwskf3J+e6/iar+4cTNM9qhoWuRfj9F3eJD6r7iCzV1SWnQr2Mdv0QT0suuqU8BoJCZUyCtP9R4Q==
   dependencies:
     "@fortawesome/fontawesome-common-types" "7.2.0"
 
-"@fortawesome/react-fontawesome@^3.2.0":
+"@fortawesome/react-fontawesome@3.3.0":
   version "3.3.0"
-  resolved "https://npm.fontawesome.com/@fortawesome/react-fontawesome/-/react-fontawesome-3.3.0.tgz#020364bdd71d785ffbb0e61425f53325f78fc647"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-3.3.0.tgz#020364bdd71d785ffbb0e61425f53325f78fc647"
   integrity sha512-EHmHeTf8WgO29sdY3iX/7ekE3gNUdlc2RW6mm/FzELlHFKfTrA9S4MlyquRR+RRCRCn8+jXfLFpLGB2l7wCWyw==
 
 "@humanfs/core@^0.19.1":
